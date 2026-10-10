@@ -68,7 +68,8 @@ workflow runs them on every pull request.
 
 ## Citation
 
-See `CITATION.cff`.
+Archived on Zenodo: concept DOI [10.5281/zenodo.23281333](https://doi.org/10.5281/zenodo.23281333) (all versions);
+version 1.0.0 is [10.5281/zenodo.23281334](https://doi.org/10.5281/zenodo.23281334). See `CITATION.cff`.
 
 ## Licence
 

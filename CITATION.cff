@@ -11,6 +11,14 @@ authors:
 version: 1.0.0
 date-released: 2026-10-10
 license: MIT
+doi: 10.5281/zenodo.23281333
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23281333
+    description: "Concept DOI (all versions)"
+  - type: doi
+    value: 10.5281/zenodo.23281334
+    description: "Version 1.0.0"
 repository-code: "https://github.com/creelie/eConjecturePrimitiveTrinomial"
 keywords:
   - lattice paths
