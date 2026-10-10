@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Even-intersecting families of lattice paths and the Catalan numbers"
+type: software
+authors:
+  - family-names: Bhattacharjee
+    given-names: Deep
+    orcid: "https://orcid.org/0000-0003-0466-750X"
+    affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
+    email: d.bhattacharjee@erl-forschung.de
+version: 1.0.0
+date-released: 2026-10-10
+license: MIT
+repository-code: "https://github.com/creelie/eConjecturePrimitiveTrinomial"
+keywords:
+  - lattice paths
+  - Eventown theorem
+  - even intersections
+  - Catalan numbers
+  - noncrossing matchings
+abstract: >-
+  Shankar proved that a family of North-East lattice paths from (0,0) to
+  (n,n) in which any two paths share an even number of edges has at most
+  2^n members, and conjectured that exactly C_n families attain this bound,
+  where C_n is the nth Catalan number. We prove the conjecture. The proof
+  determines all equality cases of the inequality behind Shankar's bound:
+  they correspond to noncrossing partial matchings of {1,...,m} whose
+  unmatched points lie under no arc, and there are C(m, floor(m/2)) of them.
+references:
+  - type: article
+    title: "Oddtown and eventown theorems for lattice paths"
+    authors:
+      - family-names: Shankar
+        given-names: Umesh
+    year: 2026
+    url: "https://arxiv.org/abs/2607.23117"
+    notes: "arXiv:2607.23117"
