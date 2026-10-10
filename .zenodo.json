@@ -1,0 +1,40 @@
+{
+  "title": "Even-intersecting families of lattice paths and the Catalan numbers",
+  "version": "1.0.0",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "creators": [
+    {
+      "name": "Bhattacharjee, Deep",
+      "orcid": "0000-0003-0466-750X",
+      "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
+    }
+  ],
+  "description": "<p>Shankar proved that a family of North&ndash;East lattice paths from (0,0) to (n,n) in which any two paths share an even number of edges has at most 2<sup>n</sup> members, and conjectured that exactly C<sub>n</sub> families attain this bound, where C<sub>n</sub> is the nth Catalan number (arXiv:2607.23117, Conjecture 4.1). We prove the conjecture: every extremal family is F<sub>M</sub> for a noncrossing perfect matching M. The proof determines all equality cases of the inequality behind Shankar's bound: they correspond to noncrossing partial matchings of {1,&hellip;,m} whose unmatched points lie under no arc, and there are C(m,&lfloor;m/2&rfloor;) of them.</p><p>The archive contains the paper (PDF, LaTeX source with the figures as PNG, arXiv tarball) and independent checks in C, C++, Bash, Python, Julia and Lean 4: the rigidity lemma of Section 4 for words of length up to 13, an exhaustive search and a SAT enumeration of all extremal systems for word lengths up to 5 and 6, Shankar's conjecture for n &le; 5 by SAT, and Lean kernel checks of the key lemmas and of the conjecture for n &le; 3.</p>",
+  "keywords": [
+    "lattice paths",
+    "Eventown theorem",
+    "even intersections",
+    "Catalan numbers",
+    "noncrossing matchings",
+    "05A15",
+    "05D05",
+    "05A05"
+  ],
+  "license": "MIT",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/creelie/eConjecturePrimitiveTrinomial",
+      "relation": "isSupplementedBy",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "arXiv:2607.23117",
+      "relation": "references",
+      "resource_type": "publication-preprint",
+      "scheme": "arxiv"
+    }
+  ],
+  "notes": "Corresponding author: d.bhattacharjee@erl-forschung.de; also itsdeep@live.com."
+}
