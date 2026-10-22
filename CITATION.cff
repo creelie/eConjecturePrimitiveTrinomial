@@ -8,17 +8,10 @@ authors:
     orcid: "https://orcid.org/0000-0003-0466-750X"
     affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
     email: d.bhattacharjee@erl-forschung.de
-version: 1.0.0
-date-released: 2026-10-10
+version: 1.1.0
+date-released: 2026-10-22
+url: "https://github.com/creelie/eConjecturePrimitiveTrinomial/releases/tag/v1.1.0"
 license: MIT
-doi: 10.5281/zenodo.23281333
-identifiers:
-  - type: doi
-    value: 10.5281/zenodo.23281333
-    description: "Concept DOI (all versions)"
-  - type: doi
-    value: 10.5281/zenodo.23281334
-    description: "Version 1.0.0"
 repository-code: "https://github.com/creelie/eConjecturePrimitiveTrinomial"
 keywords:
   - lattice paths

@@ -57,4 +57,7 @@ for f in $FIGS; do cp "figures/$f.pdf" "$STAGE/arxiv/figures/"; done
 tar -czf "$DIST/$NAME-arxiv.tar.gz" -C "$STAGE/arxiv" .
 
 rm -f main.aux main.log main.out main.pdf
+mkdir -p "$ROOT/paper/paper1" "$ROOT/paper/paper2"
+cp "$DIST/$NAME.pdf" "$ROOT/paper/paper1/"
+cp "$DIST/$NAME-tex.zip" "$ROOT/paper/paper2/"
 ls -l "$DIST"

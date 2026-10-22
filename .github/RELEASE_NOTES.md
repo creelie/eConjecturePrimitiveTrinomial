@@ -11,6 +11,8 @@ Shankar proved that a family of North–East lattice paths from (0,0) to (n,n) i
 | Theorem 1.2, Corollary 1.3 | Extremal systems are the skeleton systems; there are C(m, ⌊m/2⌋) of them |
 | Theorem 1.1 | Shankar's conjecture: the extremal families are exactly the C_n families F_M |
 
+Version 1.1.0 cites this release in the data availability statement and adds `paper/paper1` (PDF) and `paper/paper2` (tex zip). The mathematics is that of v1.0.0.
+
 The proofs are by hand. Checks in C, C++, Bash, Python (SAT), Julia and Lean 4 (kernel) confirm the lemmas and the theorems on all small cases: the rigidity lemma for word lengths up to 13, all extremal systems up to length 6, and Shankar's conjecture up to n = 5.
 
 Files:

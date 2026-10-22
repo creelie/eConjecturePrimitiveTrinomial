@@ -2,9 +2,7 @@ name: release
 
 # Run by hand from the Actions tab (or the API) after the PR is merged:
 # it tags the chosen commit, publishes a GitHub release with the files in
-# dist/ and the notes in .github/RELEASE_NOTES.md, and Zenodo archives the
-# release and mints a DOI if the repository is switched on at
-# https://zenodo.org/account/settings/github/.
+# dist/ and the notes in .github/RELEASE_NOTES.md.
 
 on:
   workflow_dispatch:
@@ -12,7 +10,7 @@ on:
       tag:
         description: "Release tag, e.g. v1.0.0"
         required: true
-        default: "v1.0.0"
+        default: "v1.1.0"
       target:
         description: "Branch or commit to tag"
         required: true
