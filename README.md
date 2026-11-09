@@ -19,11 +19,14 @@ equality cases of the underlying inequality, and continues with:
 
 Open: the growth of the largest odd family in the square, whether 2^n bounds the odd families from
 (0,0) to (n+1, n), and the exact even value in rectangles that are not squares.
+The second problem is reduced to a conjecture on paths with free endpoints (Conjecture 9.2,
+Proposition 9.3): paths of odd length m from (0,0) with pairwise odd numbers of common edges number at
+most 2^((m−1)/2); this is verified for m ≤ 9.
 
 `preprintCatalanRigidity/` holds the LaTeX source and PNG figures (`figsrc/` draws the plots);
 `dist/catalan-rigidity-even-lattice-paths.pdf` and `-tex.zip` are the compiled paper and its source.
-`verification/catalan-rigidity/` holds the exact maximum clique search and the checks of the two-row
-families (see its README).
+`verification/catalan-rigidity/` holds the exact maximum clique search, the search for paths with free
+endpoints and the checks of the two-row families (see its README).
 
 The rest of this README describes the first paper, which proves Shankar's conjecture alone.
 

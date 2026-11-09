@@ -51,6 +51,8 @@ jobs:
           grep -qx ok out.txt
           python3 two_rows_exact.py 12
           test "$(python3 largest_family.py 5 5 1 | head -1)" = 10
+          test "$(python3 free_end_families.py 9 | head -1)" = 16
+          test "$(python3 free_end_families.py 9 1 | head -1)" = 16
 
   paper:
     name: Build the paper
