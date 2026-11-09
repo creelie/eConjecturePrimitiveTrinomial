@@ -10,6 +10,7 @@ A family of North–East lattice paths from (0,0) to (n,n) in which any two path
 | Odd length | at least C_{n+1} odd families of size 2^n from (0,0) to (n+1, n) |
 | Square, odd | largest odd family 1, 2, 3, 6, 10, 16 for n ≤ 6; at least 20 and 28 for n = 7, 8 |
 | Two rows (Theorem 8.6, Proposition 8.7) | families of sizes ⌊a/2⌋+3, ⌊(5a−1)/4⌋, ⌊(5a−2)/4⌋ in the a × 2 rectangle, optimal for a ≤ 22 |
+| Free endpoints (Conjecture 9.2, Proposition 9.3) | the odd Catalan problem is reduced to paths of odd length m from (0,0) with free endpoints and pairwise odd intersections, conjectured to number at most 2^((m−1)/2); verified for m ≤ 9 |
 
 Open problems stated in the paper: the growth of the largest odd family in the square, whether 2^n bounds the odd families from (0,0) to (n+1, n), and the exact even value in rectangles that are not squares.
 
@@ -18,4 +19,4 @@ Files:
 - `catalan-rigidity-even-lattice-paths-tex.zip`: LaTeX source with the figures as PNG
 - `even-lattice-paths-catalan.pdf`, `-tex.zip`, `-arxiv.tar.gz`: the earlier paper on Shankar's conjecture
 
-`verification/catalan-rigidity/` repeats the exact searches and checks the two-row families; `scripts/run_all.sh` repeats the checks of the earlier paper.
+`verification/catalan-rigidity/` repeats the exact searches, including the search for paths with free endpoints, and checks the two-row families; `scripts/run_all.sh` repeats the checks of the earlier paper.

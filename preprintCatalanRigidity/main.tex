@@ -173,7 +173,7 @@ For paths from $(0,0)$ to $(n+1,n)$, pairwise odd families behave like the even 
 For every $n\ge1$ there are at least $C_{n+1}$ distinct families of $2^n$ lattice paths from $(0,0)$ to $(n+1,n)$ in which every two distinct paths share an odd number of edges, and $2^n\le\Modd(n+1,n)<2^{n+1/2}$.\footnote{Since $2^{n+1/2}=\sqrt2\cdot2^n$, the theorem determines $\Modd(n+1,n)$ up to a factor smaller than $\sqrt2\approx1.414$. Conjecture~\ref{conj:oddcatalan} asserts that the lower bound is the exact value.}
 \end{introthm}
 
-We conjecture that $\Modd(n+1,n)=2^n$ and that the $C_{n+1}$ families of Theorem~\ref{thm:E} are the only extremal ones (Conjecture~\ref{conj:oddcatalan}); an exhaustive search confirms the value for $n\le5$ and the count for $n\le4$.
+We conjecture that $\Modd(n+1,n)=2^n$ and that the $C_{n+1}$ families of Theorem~\ref{thm:E} are the only extremal ones (Conjecture~\ref{conj:oddcatalan}); an exhaustive search confirms the value for $n\le5$ and the count for $n\le4$. The value $2^n$ would follow from a statement in which the endpoints are free: a set of paths of odd length $m$ from $(0,0)$ in which every two share an odd number of edges has at most $2^{(m-1)/2}$ elements (Conjecture~\ref{conj:freeend}, Proposition~\ref{prop:freeend}, Figure~\ref{fig:freeend}); we verify this statement for $m\le9$.
 
 Finally we return to Shankar's odd problem for the square. An exhaustive search gives $\Modd(n,n)=1,2,3,6,10,16$ for $n=1,\dots,6$, and explicit families give $\Modd(7,7)\ge20$ and $\Modd(8,8)\ge28$. The constructions of~\cite{Sh} give $k^2$ for $n=2k$ and $k(k+2)$ for $n=2k+1$, that is $9$, $15$ and $16$ for $n=6,7,8$; so the leading constant $\tfrac14$ of those constructions is not the truth.\footnote{For $n=2k$ the construction has $k^2=n^2/4$ paths, and for $n=2k+1$ it has $k(k+2)=(n^2+2n-3)/4$; in both cases the size is $n^2/4+O(n)$. The values $16$, $20$ and $28$ found for $n=6,7,8$ are close to $\binom n2=15,21,28$, which is $n^2/2+O(n)$, while the upper bound $n(n-1)+1$ is $n^2+O(n)$. Figure~\ref{fig:oddvalues} compares the three curves.} The families are listed in Appendix~\ref{app:families}.
 
@@ -181,7 +181,7 @@ For two rows of cells, where Theorem~\ref{thm:D} leaves a gap between $4$ and $2
 
 \subsection{Method and organisation}
 
-The proof of Theorem~\ref{thm:B} follows Shankar's induction, which deletes the last letter of every word. In Section~\ref{sec:induction} we show that for an extremal system the two systems of length $m-1$ produced by the induction coincide, so that by induction they form one skeleton system, and the system of length $m$ is obtained from it by grouping some of its classes in pairs. Section~\ref{sec:star} proves a rigidity statement, Lemma~\ref{lem:star}, for two words of adjacent weights that no word of a third weight can tell apart; it rests on the effect of moving a path across one unit square. In Section~\ref{sec:groupings} we show that only two groupings are possible, and each gives a skeleton system of length $m$. Section~\ref{sec:count} proves Theorem~\ref{thm:A} and counts skeletons by a reflection argument. Section~\ref{sec:rank} proves Theorem~\ref{thm:C}, Section~\ref{sec:rect} proves Theorems~\ref{thm:D} and~\ref{thm:E}, and Section~\ref{sec:open} collects the problems that remain. Appendix~\ref{app:comp} describes the computations and Appendix~\ref{app:families} lists the families.
+The proof of Theorem~\ref{thm:B} follows Shankar's induction, which deletes the last letter of every word. In Section~\ref{sec:induction} we show that for an extremal system the two systems of length $m-1$ produced by the induction coincide, so that by induction they form one skeleton system, and the system of length $m$ is obtained from it by grouping some of its classes in pairs. Section~\ref{sec:star} proves a rigidity statement, Lemma~\ref{lem:star}, for two words of adjacent weights that no word of a third weight can tell apart; it rests on the effect of moving a path across one unit square. In Section~\ref{sec:groupings} we show that only two groupings are possible, and each gives a skeleton system of length $m$. Section~\ref{sec:count} proves Theorem~\ref{thm:A} and counts skeletons by a reflection argument. Section~\ref{sec:rank} proves Theorem~\ref{thm:C}, Section~\ref{sec:rect} proves Theorems~\ref{thm:D} and~\ref{thm:E}, and Section~\ref{sec:open} collects the problems that remain and reduces the odd Catalan problem to paths with free endpoints. Appendix~\ref{app:comp} describes the computations and Appendix~\ref{app:families} lists the families.
 
 The author has studied extremal questions for binary words, lattices and graphs before~\cite{Bh1,Bh2,Bh3,Bh4}; the first of these papers contains the proof of Theorem~\ref{thm:A} given here in Sections~\ref{sec:skeletons}--\ref{sec:count}, and the present paper places it in the general setting of rectangles and both parities. Standard references for lattice path enumeration and noncrossing structures are~\cite{Kr,De,Si,Kre}.
 
@@ -821,6 +821,42 @@ For every $n\ge1$, $\Modd(n+1,n)=2^n$, and the odd families of size $2^n$ of pat
 
 The value is confirmed for $n\le5$ and the count for $n\le4$. The first part has an equivalent form in terms of admissible systems. Splitting an odd family $\cF$ by its last letter, $\cF=X0\cup Y1$, Lemma~\ref{lem:basic}(b) shows that $X$ and $Y$ are even families of words of length $2n$ and weights $n$ and $n-1$, and that $B_{2n}(x,y)=B_{2n+1}(x0,y1)=1$ for $x\in X$ and $y\in Y$; so $\{X,Y\}$ (without the empty sets) is an admissible system of length $2n$. Conversely, for every admissible system $\{X,Y\}$ of length $2n$ with weights $n$ and $n-1$ and $B_{2n}\equiv1$ on $X\times Y$, the set $X0\cup Y1$ is an odd family. Hence $\Modd(n+1,n)=2^n$ if and only if $|X|+|Y|\le2^n$ for all such systems. Proposition~\ref{prop:inequality} gives only $|X|^2+|Y|^2\le2^{2n}$, and Remark~\ref{rem:classsizes} shows that equality cannot hold when both sets are nonempty; the conjecture asks for the stronger, linear form of this inequality.
 
+The first part of Conjecture~\ref{conj:oddcatalan} is the constant-weight case of a statement about paths of odd length whose endpoints are not fixed.
+
+\begin{conjecture}\label{conj:freeend}
+Let $m$ be odd, and let $\cF$ be a set of lattice paths of length $m$ starting at $(0,0)$, with arbitrary endpoints, in which every two distinct paths share an odd number of edges. Then $|\cF|\le2^{(m-1)/2}$.
+\end{conjecture}
+
+In terms of words, $\cF\subseteq L(m)$ and $B_m(x,y)=1$ for all distinct $x,y\in\cF$. The bound is attained, for instance by the families of Theorem~\ref{thm:E}, and also by families whose endpoints differ (Figure~\ref{fig:freeend}).
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{fig_freeend.png}
+\caption{Eight paths of length $7$ from $(0,0)$ with three different endpoints, every two of which share an odd number of edges; the matrix on the right lists the numbers of shared edges. The family has the largest size $2^{3}$ allowed by Conjecture~\ref{conj:freeend}.}\label{fig:freeend}
+\end{figure}
+
+\begin{proposition}\label{prop:freeend}
+For $k\ge0$ let $f(k)$ be the largest size of a set $\cF\subseteq L(2k+1)$ whose words all have weights of the same parity and satisfy $B_{2k+1}(x,y)=1$ for $x\ne y$, and let $h(k)$ be the largest size of a set $\cG\subseteq L(2k)$ with
+\[
+B_{2k}(u,v)=\Iv{\wt(u)\ne\wt(v)}\qquad\text{for all distinct }u,v\in\cG .
+\]
+Then $f(k)=h(k)$. If Conjecture~\ref{conj:freeend} holds for $m=2k-1$, then $h(k)\le2^k$. Consequently Conjecture~\ref{conj:freeend} for $m=2n-1$ implies $\Modd(n+1,n)=2^n$.
+\end{proposition}
+
+\begin{proof}
+Let $\cF$ be as in the definition of $f(k)$, with all weights congruent to $p$ modulo $2$, and write $\cF=X0\cup Y1$. If $u0$ and $u1$ both lay in $\cF$, Lemma~\ref{lem:basic} would give $B_{2k+1}(u0,u1)=B_{2k}(u,u)=0$; hence $X\cap Y=\varnothing$. Words of $X$ have weights congruent to $p$ and words of $Y$ weights congruent to $p+1$. For distinct $u,v\in X$, Lemma~\ref{lem:basic} gives $1=B_{2k+1}(u0,v0)=B_{2k}(u,v)+\Iv{\wt(u)=\wt(v)}$, so $B_{2k}(u,v)=\Iv{\wt(u)\ne\wt(v)}$; the same holds in $Y$. For $u\in X$ and $v\in Y$, $B_{2k}(u,v)=B_{2k+1}(u0,v1)=1=\Iv{\wt(u)\ne\wt(v)}$, since the weights have different parities. So $\cG=X\cup Y$ is as in the definition of $h(k)$, and $|\cG|=|\cF|$. Conversely, for such a $\cG$ the set $\{u0:\ \wt(u)\equiv p\}\cup\{u1:\ \wt(u)\not\equiv p\}$ has $|\cG|$ elements, all of weight congruent to $p$, and the same computation read backwards gives $B_{2k+1}=1$ on distinct pairs. Hence $f(k)=h(k)$.
+
+Let $k\ge1$ and let $\cG$ be as in the definition of $h(k)$. For $e\in\{0,1\}$ put $\cG_e=\{v\in L(2k-1):\ ve\in\cG\}$. For distinct $u,v\in\cG_e$,
+\[
+B_{2k-1}(u,v)=B_{2k}(ue,ve)+\Iv{\wt(u)=\wt(v)}=\Iv{\wt(u)\ne\wt(v)}+\Iv{\wt(u)=\wt(v)}=1,
+\]
+because $ue$ and $ve$ have different weights exactly when $u$ and $v$ do. So $\cG_e$ satisfies the hypothesis of Conjecture~\ref{conj:freeend} with $m=2k-1$, and $|\cG|=|\cG_0|+|\cG_1|\le2\cdot2^{k-1}$. An odd family of paths from $(0,0)$ to $(n+1,n)$ is a set as in the definition of $f(n)$, so $\Modd(n+1,n)\le f(n)=h(n)\le2^n$, and Theorem~\ref{thm:E} gives equality.
+\end{proof}
+
+The search of Appendix~\ref{app:comp}, run on the graph of all words of length $m$, confirms Conjecture~\ref{conj:freeend} for $m\le9$, and $f(k)=2^k$ for $k\le5$.\footnote{The natural induction removes the last two letters. Write $\cF_{st}=\{u:\ ust\in\cF\}$ for $s,t\in\{0,1\}$. By Lemma~\ref{lem:basic}, $B_m(ust,vs't')=B_{m-2}(u,v)$ whenever $s\ne s'$ and $t\ne t'$, and also when $(s,t)=(s',t')$; so $\cF_{00}\cup\cF_{11}$ and $\cF_{01}\cup\cF_{10}$ again satisfy the hypothesis of Conjecture~\ref{conj:freeend}, now for length $m-2$. This gives $|\cF|\le2^{(m-1)/2}+|\cF_{00}\cap\cF_{11}|+|\cF_{01}\cap\cF_{10}|$, and the conjecture would follow if the two intersections were empty. They need not be: $u00$ and $u11$ share the odd number $m-2$ of edges. A sum-of-squares argument in the style of Proposition~\ref{prop:inequality} cannot replace this step, because the extremal families of Theorem~\ref{thm:E} split by their last letter as $(2^n,0)$ and as $(2^{n-1},2^{n-1})$, and no single quadratic bound is sharp at both points.}
+
+Semidefinite bounds separate the two settings. Call two paths of the same length compatible when they share an odd number of edges, and join incompatible paths by an edge. An odd family is then an independent set, so the Lov\'asz number $\vartheta$ of this graph~\cite{Lo} bounds its size. For the paths from $(0,0)$ to $(n+1,n)$ the computed value of $\vartheta$ is $2^n$ for $n\le4$, which indicates that for these $n$ the first part of Conjecture~\ref{conj:oddcatalan} can be proved by an orthonormal representation; we have not found one that works for every $n$.\footnote{The values of $\vartheta$ were obtained by semidefinite programming, as described in Appendix~\ref{app:comp}. For $n\le3$ there is even a partition of the paths into $2^n$ even families, which proves the bound at once, since an odd family meets each even family at most once. Such partitions cannot exist for large $n$ if, as the values of Table~\ref{tab:values} suggest, $\Meven(n+1,n)$ grows polynomially: the $\binom{2n+1}{n}$ paths would need classes of average size $\binom{2n+1}{n}2^{-n}$, which grows exponentially.} For paths with free endpoints the same bound is not sharp: for $m=5$ it is about $4.41$, while the largest family has $4$ members.
+
 Theorem~\ref{thm:D}(iii) gives $\Modd(n+1,n)\ge\Meven(n,n)$, and the computations suggest that the passage from length $2n$ to length $2n+1$ never helps, in every rectangle. Call a family of paths from $(0,0)$ to $(a,b)$ \emph{one-class} if it is even when $a+b$ is even and odd when $a+b$ is odd, and let $g(a,b)$ be the largest size of such a family.
 
 \begin{conjecture}\label{conj:shift}
@@ -833,7 +869,7 @@ For $a=b=n$ this is the first part of Conjecture~\ref{conj:oddcatalan}. Theorem~
 The bounds of Theorem~\ref{thm:tworows} are equalities for every $a\ge2$.
 \end{conjecture}
 
-The one-class part of Conjecture~\ref{conj:tworows} reads $g(a,2)=\lfloor a/2\rfloor+3$, which would prove Conjecture~\ref{conj:shift} for $b=2$. Deleting the first and the last column of the grid maps the one-class paths $(i,i')$ with $1\le i\le i'\le a-1$ to one-class paths from $(0,0)$ to $(a-2,2)$, since every pair loses exactly two common edges. By Lemma~\ref{lem:tworows}(B) and (C), no three paths of a one-class family share their first north step, and no three share their second. Hence $g(a,2)\le g(a-2,2)+4$, which falls short of the conjectured increment $1$.
+The one-class part of Conjecture~\ref{conj:tworows} reads $g(a,2)=\lfloor a/2\rfloor+3$, which would prove Conjecture~\ref{conj:shift} for $b=2$. Deleting the first and the last column of the grid maps the one-class paths $(i,i')$ with $1\le i\le i'\le a-1$ to one-class paths from $(0,0)$ to $(a-2,2)$, since every pair loses exactly two common edges. By Lemma~\ref{lem:tworows}(B) and (C), no three paths of a one-class family share their first north step, and no three share their second. Hence $g(a,2)\le g(a-2,2)+4$, which falls short of the conjectured increment $1$. A covering argument cannot close the gap: for $a=7,8,9$ the paths cannot be split into $\lfloor a/2\rfloor+3$ sets of pairwise incompatible paths. The semidefinite bound $\vartheta'$ of Schrijver~\cite{Sc}, however, equals $\lfloor a/2\rfloor+3$ for every $a\le10$, which points to a proof by a quadratic inequality.
 
 \begin{problem}\label{prob:oddsquare}
 Determine the order of $\Modd(n,n)/n^2$. Is $\Modd(n,n)\ge\binom n2$ for every $n\ge3$?
@@ -896,6 +932,12 @@ Listing all maximal cliques of $\mathcal H$ shows that the even families of $2^n
 
 \subsection*{Odd families in larger squares}
 For $n=7,8$ the full search is too slow, and the search was restricted to unit paths (Section~\ref{sec:rect}). Among the $320$ unit paths from $(0,0)$ to $(7,7)$ the largest odd family has $20$ members, and among the $704$ unit paths from $(0,0)$ to $(8,8)$ it has $28$. These give the lower bounds of Proposition~\ref{prop:oddsmall}.
+
+\subsection*{Paths with free endpoints}
+For Conjecture~\ref{conj:freeend} the same search was run on the graph of all $2^m$ words of length $m$, two words being adjacent when $B_m=1$. Its clique number is $1,2,4,8,16$ for $m=1,3,5,7,9$, which is $2^{(m-1)/2}$. Restricted to the words of length $2k+1$ whose weights have a fixed parity, the search gives $f(k)=1,2,4,8,16,32$ for $k=0,\dots,5$, for both parities. Figure~\ref{fig:freeend} shows one of the largest families for $m=7$.
+
+\subsection*{Semidefinite bounds}
+The Lov\'asz number $\vartheta$ and Schrijver's number $\vartheta'$ of Section~\ref{sec:open} were computed as the optimum of the standard semidefinite programs~\cite{Lo,Sc} with an interior point solver. For the paths from $(0,0)$ to $(n+1,n)$, $\vartheta=4,8,16$ for $n=2,3,4$; for all words of length $5$, $\vartheta\approx4.412$; and for the one-class problem in the $a\times2$ rectangle, $\vartheta'=\lfloor a/2\rfloor+3$ for $4\le a\le10$. The partitions into $2^n$ even families for $n\le3$, and the nonexistence of partitions into $\lfloor a/2\rfloor+3$ sets of pairwise incompatible paths for $a=7,8,9$, were found by a satisfiability solver.
 
 \subsection*{Two rows}
 For $b=2$ the graph $\mathcal H$ was built on the $\binom{a+2}2$ pairs $(i,i')$, with adjacency read off from Lemma~\ref{lem:tworows} and checked against a direct count of common edges, and its clique number was computed by the same search for $2\le a\le22$ and both parities. The results are, for $a=2,3,\dots,22$,
@@ -977,10 +1019,11 @@ In the family for $n=6$, the paths $111111000000$ and $000001111110$ meet only i
 
 \subsection*{Competing interests} The author declares that there are no competing interests.
 
-\subsection*{Data availability} No external data sets were used. The exact values in Appendix~\ref{app:comp} were obtained by the exhaustive search described there and can be reproduced from that description; the programs that perform the search and check the families of Theorem~\ref{thm:tworows}, together with the source of this paper, are archived in~\cite{Bh5}. The families in Appendix~\ref{app:families} are printed in full.
+\subsection*{Data availability} No external data sets were used. The exact values in Appendix~\ref{app:comp} were obtained by the exhaustive search described there and can be reproduced from that description; the programs that perform the search, check the families of Theorem~\ref{thm:tworows} and test Conjecture~\ref{conj:freeend}, together with the source of this paper, are archived in~\cite{Bh5}. The families in Appendix~\ref{app:families} are printed in full.
 
 \subsection*{Acknowledgements} The problems treated here were posed by Umesh Shankar~\cite{Sh}, whose bounds, constructions, basis of the path space and conjecture are the starting point of this work; the notion of intersection of lattice paths through common edges is due to Hiranya Dey.
 
+\raggedbottom
 \begin{thebibliography}{99}
 
 \bibitem{Be}
@@ -1027,6 +1070,12 @@ C.~Krattenthaler, \emph{Lattice path enumeration}, in: M.~B\'ona (ed.), \emph{Ha
 
 \bibitem{Kre}
 G.~Kreweras, \emph{Sur les partitions non crois\'ees d'un cycle}, Discrete Math. \textbf{1} (1972), 333--350. \doi{10.1016/0012-365X(72)90041-6}
+
+\bibitem{Lo}
+L.~Lov\'asz, \emph{On the Shannon capacity of a graph}, IEEE Trans. Inform. Theory \textbf{25} (1979), 1--7. \doi{10.1109/TIT.1979.1055985}
+
+\bibitem{Sc}
+A.~Schrijver, \emph{A comparison of the Delsarte and Lov\'asz bounds}, IEEE Trans. Inform. Theory \textbf{25} (1979), 425--429. \doi{10.1109/TIT.1979.1056072}
 
 \bibitem{Sh}
 U.~Shankar, \emph{Oddtown and eventown theorems for lattice paths}, preprint, 2026. \href{https://arxiv.org/abs/2607.23117}{arXiv:2607.23117}
