@@ -1,6 +1,6 @@
 {
-  "title": "Even-intersecting families of lattice paths and the Catalan numbers",
-  "version": "1.1.0",
+  "title": "Catalan Rigidity of Even Lattice Paths",
+  "version": "2.0.0",
   "upload_type": "publication",
   "publication_type": "preprint",
   "creators": [
@@ -10,16 +10,15 @@
       "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
     }
   ],
-  "description": "<p>Shankar proved that a family of North&ndash;East lattice paths from (0,0) to (n,n) in which any two paths share an even number of edges has at most 2<sup>n</sup> members, and conjectured that exactly C<sub>n</sub> families attain this bound, where C<sub>n</sub> is the nth Catalan number (arXiv:2607.23117, Conjecture 4.1). We prove the conjecture: every extremal family is F<sub>M</sub> for a noncrossing perfect matching M. The proof determines all equality cases of the inequality behind Shankar's bound: they correspond to noncrossing partial matchings of {1,&hellip;,m} whose unmatched points lie under no arc, and there are C(m,&lfloor;m/2&rfloor;) of them.</p><p>The archive contains the paper (PDF, LaTeX source with the figures as PNG, arXiv tarball) and independent checks in C, C++, Bash, Python, Julia and Lean 4: the rigidity lemma of Section 4 for words of length up to 13, an exhaustive search and a SAT enumeration of all extremal systems for word lengths up to 5 and 6, Shankar's conjecture for n &le; 5 by SAT, and Lean kernel checks of the key lemmas and of the conjecture for n &le; 3.</p>",
+  "description": "<p>A family of North&ndash;East lattice paths from (0,0) to (n,n) in which any two paths share an even number of edges has at most 2<sup>n</sup> members. We prove Shankar's conjecture (arXiv:2607.23117, Conjecture 4.1) that exactly C<sub>n</sub> families attain this bound, one for each noncrossing perfect matching, by classifying all equality cases of the underlying inequality: they are the skeleton systems, and there are C(m,&lfloor;m/2&rfloor;) of them. We also compute the binary rank of every grid graph, ab &minus; gcd(a+1,b+1) + 1, give eventown and oddtown bounds for paths in every rectangle, show that the odd families of paths from (0,0) to (n+1,n) of size 2<sup>n</sup> number at least C<sub>n+1</sub>, determine the largest odd family in the n &times; n square for n &le; 6 (1, 2, 3, 6, 10, 16) with lower bounds 20 and 28 for n = 7, 8, and construct even and odd families in the a &times; 2 rectangle of sizes &lfloor;a/2&rfloor;+3, &lfloor;(5a&minus;1)/4&rfloor; and &lfloor;(5a&minus;2)/4&rfloor;, optimal for a &le; 22. The growth of the largest odd family in the square, whether 2<sup>n</sup> bounds the odd families from (0,0) to (n+1,n), and the exact even value in non-square rectangles remain open.</p><p>The archive contains the paper (preprintCatalanRigidity: LaTeX source and PNG figures; dist: PDF and tex zip), the maximum clique search and the checks of the two-row families (verification/catalan-rigidity), and the earlier paper on Shankar's conjecture with its checks in C, C++, Bash, Python, Julia and Lean 4.</p>",
   "keywords": [
     "lattice paths",
-    "Eventown theorem",
-    "even intersections",
     "Catalan numbers",
-    "noncrossing matchings",
+    "parity intersection theorems",
     "05A15",
     "05D05",
-    "05A05"
+    "05C50",
+    "15B33"
   ],
   "license": "MIT",
   "language": "eng",

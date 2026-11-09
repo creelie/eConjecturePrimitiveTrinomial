@@ -8,3 +8,4 @@ build/
 __pycache__/
 .lake/
 preprintLatticePaths/main.pdf
+verification/catalan-rigidity/maxclique
