@@ -37,6 +37,21 @@ jobs:
           name: logs
           path: build/*.txt
 
+  catalan-rigidity:
+    name: Searches and two-row families
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run the checks
+        run: |
+          cd verification/catalan-rigidity
+          gcc -O2 -o maxclique maxclique.c
+          python3 two_rows_constructions.py | tee out.txt
+          grep -qx ok out.txt
+          python3 two_rows_exact.py 12
+          test "$(python3 largest_family.py 5 5 1 | head -1)" = 10
+
   paper:
     name: Build the paper
     runs-on: ubuntu-latest
@@ -50,6 +65,15 @@ jobs:
             texlive-latex-recommended texlive-latex-extra texlive-pictures \
             texlive-fonts-recommended lmodern poppler-utils zip
       - run: scripts/build_paper.sh
+      - name: Build Catalan Rigidity of Even Lattice Paths
+        run: |
+          cd preprintCatalanRigidity
+          pdflatex -interaction=nonstopmode -halt-on-error main.tex > /dev/null
+          pdflatex -interaction=nonstopmode -halt-on-error main.tex > /dev/null
+          pdflatex -interaction=nonstopmode -halt-on-error main.tex > /dev/null
+          if grep -q "Overfull\|Underfull\|undefined" main.log; then
+            grep "Overfull\|Underfull\|undefined" main.log; exit 1
+          fi
       - uses: actions/upload-artifact@v4
         with:
           name: paper

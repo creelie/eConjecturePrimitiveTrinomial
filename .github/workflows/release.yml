@@ -10,7 +10,7 @@ on:
       tag:
         description: "Release tag, e.g. v1.0.0"
         required: true
-        default: "v1.1.0"
+        default: "v2.0.0"
       target:
         description: "Branch or commit to tag"
         required: true
@@ -30,7 +30,9 @@ jobs:
         run: |
           for f in dist/even-lattice-paths-catalan.pdf \
                    dist/even-lattice-paths-catalan-tex.zip \
-                   dist/even-lattice-paths-catalan-arxiv.tar.gz; do
+                   dist/even-lattice-paths-catalan-arxiv.tar.gz \
+                   dist/catalan-rigidity-even-lattice-paths.pdf \
+                   dist/catalan-rigidity-even-lattice-paths-tex.zip; do
             test -s "$f" || { echo "missing $f"; exit 1; }
           done
       - name: Publish the release
@@ -41,5 +43,5 @@ jobs:
         run: |
           gh release create "$TAG" dist/* \
             --target "$TARGET" \
-            --title "$TAG: Even-intersecting families of lattice paths and the Catalan numbers" \
+            --title "$TAG: Catalan Rigidity of Even Lattice Paths" \
             --notes-file .github/RELEASE_NOTES.md

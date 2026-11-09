@@ -1,23 +1,21 @@
-**Even-intersecting families of lattice paths and the Catalan numbers**, by Deep Bhattacharjee.
+**Catalan Rigidity of Even Lattice Paths**, by Deep Bhattacharjee.
 
-Shankar proved that a family of North–East lattice paths from (0,0) to (n,n) in which any two paths share an even number of edges has at most 2^n members, and conjectured that exactly C_n families attain the bound (arXiv:2607.23117, Conjecture 4.1). The paper proves the conjecture and determines all equality cases of the inequality behind the bound.
+A family of North–East lattice paths from (0,0) to (n,n) in which any two paths share an even number of edges has at most 2^n members (Shankar, arXiv:2607.23117). The paper proves Shankar's conjecture that exactly C_n families attain this bound, one for each noncrossing perfect matching, by classifying all equality cases of the underlying inequality, and continues with parity families of paths in every rectangle.
 
-| Step | Content |
+| Result | Content |
 |---|---|
-| Proposition 2.2 | Skeleton systems (noncrossing partial matchings with no unmatched point under an arc) are extremal |
-| Lemmas 3.1–3.5 | Shankar's induction: for an extremal system both shorter systems coincide, and the system is a pairing of their classes |
-| Lemma 4.1 | Rigidity: two words of adjacent weights that no word of another weight can tell apart differ only in the last letter, or form 1(10)^j, 0(01)^j |
-| Proposition 5.1 | Only two pairings exist |
-| Theorem 1.2, Corollary 1.3 | Extremal systems are the skeleton systems; there are C(m, ⌊m/2⌋) of them |
-| Theorem 1.1 | Shankar's conjecture: the extremal families are exactly the C_n families F_M |
+| Theorems A, B | Shankar's conjecture; the extremal admissible systems are the skeleton systems, C(m, ⌊m/2⌋) of them |
+| Grid rank | the binary rank of the a × b grid graph is ab − gcd(a+1, b+1) + 1 |
+| Rectangles | eventown and oddtown bounds for paths from (0,0) to (a,b) |
+| Odd length | at least C_{n+1} odd families of size 2^n from (0,0) to (n+1, n) |
+| Square, odd | largest odd family 1, 2, 3, 6, 10, 16 for n ≤ 6; at least 20 and 28 for n = 7, 8 |
+| Two rows (Theorem 8.6, Proposition 8.7) | families of sizes ⌊a/2⌋+3, ⌊(5a−1)/4⌋, ⌊(5a−2)/4⌋ in the a × 2 rectangle, optimal for a ≤ 22 |
 
-Version 1.1.0 cites this release in the data availability statement and adds `paper/paper1` (PDF) and `paper/paper2` (tex zip). The mathematics is that of v1.0.0.
-
-The proofs are by hand. Checks in C, C++, Bash, Python (SAT), Julia and Lean 4 (kernel) confirm the lemmas and the theorems on all small cases: the rigidity lemma for word lengths up to 13, all extremal systems up to length 6, and Shankar's conjecture up to n = 5.
+Open problems stated in the paper: the growth of the largest odd family in the square, whether 2^n bounds the odd families from (0,0) to (n+1, n), and the exact even value in rectangles that are not squares.
 
 Files:
-- `even-lattice-paths-catalan.pdf`: the paper
-- `even-lattice-paths-catalan-tex.zip`: LaTeX source with the figures as PNG (and their TikZ sources)
-- `even-lattice-paths-catalan-arxiv.tar.gz`: LaTeX source with the figures as PDF, ready for arXiv
+- `catalan-rigidity-even-lattice-paths.pdf`: the paper
+- `catalan-rigidity-even-lattice-paths-tex.zip`: LaTeX source with the figures as PNG
+- `even-lattice-paths-catalan.pdf`, `-tex.zip`, `-arxiv.tar.gz`: the earlier paper on Shankar's conjecture
 
-Run `scripts/run_all.sh` to repeat the checks and `scripts/build_paper.sh` to rebuild the files above.
+`verification/catalan-rigidity/` repeats the exact searches and checks the two-row families; `scripts/run_all.sh` repeats the checks of the earlier paper.
