@@ -183,7 +183,7 @@ For two rows of cells, where Theorem~\ref{thm:D} leaves a gap between $4$ and $2
 
 The proof of Theorem~\ref{thm:B} follows Shankar's induction, which deletes the last letter of every word. In Section~\ref{sec:induction} we show that for an extremal system the two systems of length $m-1$ produced by the induction coincide, so that by induction they form one skeleton system, and the system of length $m$ is obtained from it by grouping some of its classes in pairs. Section~\ref{sec:star} proves a rigidity statement, Lemma~\ref{lem:star}, for two words of adjacent weights that no word of a third weight can tell apart; it rests on the effect of moving a path across one unit square. In Section~\ref{sec:groupings} we show that only two groupings are possible, and each gives a skeleton system of length $m$. Section~\ref{sec:count} proves Theorem~\ref{thm:A} and counts skeletons by a reflection argument. Section~\ref{sec:rank} proves Theorem~\ref{thm:C}, Section~\ref{sec:rect} proves Theorems~\ref{thm:D} and~\ref{thm:E}, and Section~\ref{sec:open} collects the problems that remain and reduces the odd Catalan problem to paths with free endpoints. Appendix~\ref{app:comp} describes the computations and Appendix~\ref{app:families} lists the families.
 
-The author has studied extremal questions for binary words, lattices and graphs before~\cite{Bh1,Bh2,Bh3,Bh4}; the first of these papers contains the proof of Theorem~\ref{thm:A} given here in Sections~\ref{sec:skeletons}--\ref{sec:count}, and the present paper places it in the general setting of rectangles and both parities. Standard references for lattice path enumeration and noncrossing structures are~\cite{Kr,De,Si,Kre}.
+The paper is self-contained: every result is proved here, and the computations of Appendix~\ref{app:comp} are described in enough detail to be repeated. Standard references for lattice path enumeration and noncrossing structures are~\cite{Kr,De,Si,Kre}.
 
 \section{Words, paths and skeletons}\label{sec:skeletons}
 
@@ -1019,7 +1019,9 @@ In the family for $n=6$, the paths $111111000000$ and $000001111110$ meet only i
 
 \subsection*{Competing interests} The author declares that there are no competing interests.
 
-\subsection*{Data availability} No external data sets were used. The exact values in Appendix~\ref{app:comp} were obtained by the exhaustive search described there and can be reproduced from that description; the programs that perform the search, check the families of Theorem~\ref{thm:tworows} and test Conjecture~\ref{conj:freeend}, together with the source of this paper, are archived in~\cite{Bh5}. The families in Appendix~\ref{app:families} are printed in full.
+\subsection*{Data availability} No external data sets were used. The exact values in Appendix~\ref{app:comp} were obtained by the exhaustive search described there and can be reproduced from that description; the programs that perform the search, check the families of Theorem~\ref{thm:tworows} and test Conjecture~\ref{conj:freeend} are included with this preprint as supplementary files. The families in Appendix~\ref{app:families} are printed in full.
+
+\subsection*{Use of artificial intelligence} AI coding assistants were used to write and test the search programs and to check the bibliography. All mathematical arguments were written and verified by the author, who takes full responsibility for the content.
 
 \subsection*{Acknowledgements} The problems treated here were posed by Umesh Shankar~\cite{Sh}, whose bounds, constructions, basis of the path space and conjecture are the starting point of this work; the notion of intersection of lattice paths through common edges is due to Hiranya Dey.
 
@@ -1028,21 +1030,6 @@ In the family for $n=6$, the paths $111111000000$ and $000001111110$ meet only i
 
 \bibitem{Be}
 E.~R. Berlekamp, \emph{On subsets with intersections of even cardinality}, Canad. Math. Bull. \textbf{12} (1969), 471--474. \doi{10.4153/CMB-1969-059-3}
-
-\bibitem{Bh1}
-D.~Bhattacharjee, \emph{Even-intersecting families of lattice paths and the Catalan numbers}, Hexagon preprint 2610.00474, 2026. \url{https://hexagonmath.org/2610.00474}
-
-\bibitem{Bh2}
-D.~Bhattacharjee, \emph{The minimum number of distinct abelian squares in a binary circular word}, Hexagon preprint 2610.00473, 2026. \url{https://hexagonmath.org/2610.00473}
-
-\bibitem{Bh3}
-D.~Bhattacharjee, \emph{Maximal sublattices of finite semidistributive lattices: the complement need not be an interval}, Hexagon preprint 2610.00497, 2026. \url{https://hexagonmath.org/2610.00497}
-
-\bibitem{Bh4}
-D.~Bhattacharjee, \emph{Unbounded strong-product ratios for the Grundy domination number}, Hexagon preprint 2610.00494, 2026. \url{https://hexagonmath.org/2610.00494}
-
-\bibitem{Bh5}
-D.~Bhattacharjee, \emph{Catalan rigidity of even lattice paths: source and search programs}, Zenodo, version 2.1.0, 2026. \doi{10.5281/zenodo.24091548}
 
 \bibitem{De}
 E.~Deutsch, \emph{Dyck path enumeration}, Discrete Math. \textbf{204} (1999), 167--202. \doi{10.1016/S0012-365X(98)00371-9}
