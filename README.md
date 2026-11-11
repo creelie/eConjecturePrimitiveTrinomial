@@ -104,6 +104,7 @@ Cite the GitHub release; see `CITATION.cff`.
 |---|---|
 | v2.0.0 | https://github.com/creelie/eConjecturePrimitiveTrinomial/releases/tag/v2.0.0, DOI [10.5281/zenodo.24090676](https://doi.org/10.5281/zenodo.24090676) |
 | v2.1.0 | https://github.com/creelie/eConjecturePrimitiveTrinomial/releases/tag/v2.1.0, DOI [10.5281/zenodo.24091548](https://doi.org/10.5281/zenodo.24091548) |
+| v2.2.0 | https://github.com/creelie/eConjecturePrimitiveTrinomial/releases/tag/v2.2.0, DOI [10.5281/zenodo.24124754](https://doi.org/10.5281/zenodo.24124754) |
 | v1.1.0 | https://github.com/creelie/eConjecturePrimitiveTrinomial/releases/tag/v1.1.0 |
 | v1.0.0 | https://github.com/creelie/eConjecturePrimitiveTrinomial/releases/tag/v1.0.0 |
 
