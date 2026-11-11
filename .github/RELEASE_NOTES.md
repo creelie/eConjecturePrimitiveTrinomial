@@ -14,6 +14,8 @@ A family of North–East lattice paths from (0,0) to (n,n) in which any two path
 
 Open problems stated in the paper: the growth of the largest odd family in the square, whether 2^n bounds the odd families from (0,0) to (n+1, n), and the exact even value in rectangles that are not squares.
 
+Version 2.2.0 makes the paper self-contained: it no longer cites the Hexagon preprints or a Zenodo archive, the search programs ship with it as supplementary files, and the declarations include an AI-use statement.
+
 Files:
 - `catalan-rigidity-even-lattice-paths.pdf`: the paper
 - `catalan-rigidity-even-lattice-paths-tex.zip`: LaTeX source with the figures as PNG
