@@ -12,8 +12,11 @@ version: 3.0.0
 date-released: 2026-11-12
 url: "https://github.com/creelie/eConjecturePrimitiveTrinomial/releases/tag/v3.0.0"
 license: MIT
-doi: 10.5281/zenodo.23281333
+doi: 10.5281/zenodo.24169702
 identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24169702
+    description: "Version DOI of release v3.0.0"
   - type: doi
     value: 10.5281/zenodo.23281333
     description: "Concept DOI (all versions)"
