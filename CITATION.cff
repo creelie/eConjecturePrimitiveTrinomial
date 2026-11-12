@@ -1,43 +1,32 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it as below."
-title: "Catalan Rigidity of Even Lattice Paths"
+title: "Parity Families of Lattice Paths and Real-Rooted Signed Eulerian Polynomials"
 type: software
 authors:
   - family-names: Bhattacharjee
     given-names: Deep
     orcid: "https://orcid.org/0000-0003-0466-750X"
-    affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
+    affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India; Formerly, University of Calcutta (Heramba Chandra College), Kolkata 700029, India"
     email: d.bhattacharjee@erl-forschung.de
-version: 2.2.0
-date-released: 2026-11-11
-url: "https://github.com/creelie/eConjecturePrimitiveTrinomial/releases/tag/v2.2.0"
+version: 3.0.0
+date-released: 2026-11-12
+url: "https://github.com/creelie/eConjecturePrimitiveTrinomial/releases/tag/v3.0.0"
 license: MIT
-doi: 10.5281/zenodo.24124754
+doi: 10.5281/zenodo.23281333
 identifiers:
-  - type: doi
-    value: 10.5281/zenodo.24124754
-    description: "Version DOI of release v2.2.0"
   - type: doi
     value: 10.5281/zenodo.23281333
     description: "Concept DOI (all versions)"
 repository-code: "https://github.com/creelie/eConjecturePrimitiveTrinomial"
 keywords:
   - lattice paths
-  - Catalan numbers
-  - parity intersection theorems
+  - eventown and oddtown
+  - real-rooted polynomials
 abstract: >-
-  A family of North-East lattice paths from (0,0) to (n,n) in which any two
-  paths share an even number of edges has at most 2^n members. We prove
-  Shankar's conjecture that exactly C_n families attain this bound, one for
-  each noncrossing perfect matching, by classifying all equality cases of
-  the underlying inequality. We also compute the binary rank of every grid
-  graph and bound parity families of paths in every rectangle.
-references:
-  - type: article
-    title: "Oddtown and eventown theorems for lattice paths"
-    authors:
-      - family-names: Shankar
-        given-names: Umesh
-    year: 2026
-    url: "https://arxiv.org/abs/2607.23117"
-    notes: "arXiv:2607.23117"
+  We classify the extremal families of lattice paths with pairwise even
+  numbers of common edges for every length and endpoint, which gives
+  Shankar's Catalan conjecture, compute the binary rank of grid graphs, and
+  double the lower bound for odd families in the square. We prove that the
+  signed Eulerian polynomials are real-rooted, as Fulman, Kim, Lee and
+  Petersen conjectured, and settle conjectures on canon, caged and Dumont
+  permutations.

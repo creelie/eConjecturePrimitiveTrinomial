@@ -1,16 +1,16 @@
 name: release
 
 # Run by hand from the Actions tab (or the API) after the PR is merged:
-# it tags the chosen commit, publishes a GitHub release with the files in
-# dist/ and the notes in .github/RELEASE_NOTES.md.
+# it tags the chosen commit and publishes a GitHub release with the paper
+# and the notes in .github/RELEASE_NOTES.md.
 
 on:
   workflow_dispatch:
     inputs:
       tag:
-        description: "Release tag, e.g. v1.0.0"
+        description: "Release tag, e.g. v3.0.0"
         required: true
-        default: "v2.1.0"
+        default: "v3.0.0"
       target:
         description: "Branch or commit to tag"
         required: true
@@ -27,21 +27,14 @@ jobs:
         with:
           ref: ${{ inputs.target }}
       - name: Check the release files
-        run: |
-          for f in dist/even-lattice-paths-catalan.pdf \
-                   dist/even-lattice-paths-catalan-tex.zip \
-                   dist/even-lattice-paths-catalan-arxiv.tar.gz \
-                   dist/catalan-rigidity-even-lattice-paths.pdf \
-                   dist/catalan-rigidity-even-lattice-paths-tex.zip; do
-            test -s "$f" || { echo "missing $f"; exit 1; }
-          done
+        run: test -s paper/LatticePathsPaper.pdf
       - name: Publish the release
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ inputs.tag }}
           TARGET: ${{ inputs.target }}
         run: |
-          gh release create "$TAG" dist/* \
+          gh release create "$TAG" paper/LatticePathsPaper.pdf \
             --target "$TARGET" \
-            --title "$TAG: Catalan Rigidity of Even Lattice Paths" \
+            --title "$TAG: Parity Families of Lattice Paths and Real-Rooted Signed Eulerian Polynomials" \
             --notes-file .github/RELEASE_NOTES.md

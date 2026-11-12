@@ -1,113 +1,69 @@
-# Catalan Rigidity of Even Lattice Paths
+# Parity Families of Lattice Paths and Real-Rooted Signed Eulerian Polynomials
 
 Deep Bhattacharjee
 
 Concept DOI (all versions): [10.5281/zenodo.23281333](https://doi.org/10.5281/zenodo.23281333)
 
-A family of North–East lattice paths from (0,0) to (n,n) in which any two paths share an even number of
-edges has at most 2^n members (Shankar, arXiv:2607.23117). The paper proves Shankar's conjecture that
-exactly C_n families attain this bound, one for each noncrossing perfect matching, by classifying all
-equality cases of the underlying inequality, and continues with:
+The paper is `paper/LatticePathsPaper.pdf`. This archive holds the machine checks of its finite
+statements: kernel-checked theorems in Lean 4 and exact computations in Julia. No result uses
+floating point; all arithmetic is in integers or rationals of arbitrary size. Contact for
+GitHub-related matters: egspl@proton.me.
 
-- the binary rank ab − gcd(a+1, b+1) + 1 of every grid graph;
-- eventown and oddtown bounds for paths in every rectangle;
-- at least C_{n+1} odd families of size 2^n of paths from (0,0) to (n+1, n);
-- the largest odd family in the n × n square: 1, 2, 3, 6, 10, 16 for n ≤ 6, and at least 20 and 28 for
-  n = 7, 8;
-- even and odd families in the a × 2 rectangle of sizes ⌊a/2⌋+3, ⌊(5a−1)/4⌋, ⌊(5a−2)/4⌋, optimal for
-  a ≤ 22.
+## Lean (`lean/`)
 
-Open: the growth of the largest odd family in the square, whether 2^n bounds the odd families from
-(0,0) to (n+1, n), and the exact even value in rectangles that are not squares.
-The second problem is reduced to a conjecture on paths with free endpoints (Conjecture 9.2,
-Proposition 9.3): paths of odd length m from (0,0) with pairwise odd numbers of common edges number at
-most 2^((m−1)/2); this is verified for m ≤ 9.
+Lean 4.24.0, core library only (no Mathlib). Every theorem is proved by `decide +kernel`, so the
+Lean kernel evaluates the definitions itself; there is no `native_decide`, no `sorry` and no axiom.
+`lean/axioms.txt` is the output of `#print axioms` for all 29 theorems: none depends on any axiom.
 
-`preprintCatalanRigidity/` holds the LaTeX source and PNG figures (`figsrc/` draws the plots);
-`dist/catalan-rigidity-even-lattice-paths.pdf` and `-tex.zip` are the compiled paper and its source.
-`verification/catalan-rigidity/` holds the exact maximum clique search, the search for paths with free
-endpoints and the checks of the two-row families (see its README).
+    lean LatticePaths.lean      # 14 theorems, about 2 minutes
+    lean Enumerative.lean       # 15 theorems, about 2 minutes
 
-The rest of this README describes the first paper, which proves Shankar's conjecture alone.
+`LatticePaths.lean` (words are natural numbers, bit i-1 = i-th letter, 1 = N, 0 = E):
 
-## Even-intersecting families of lattice paths and the Catalan numbers
-
-Shankar (*Oddtown and eventown theorems for lattice paths*, arXiv:2607.23117) proved that a family of
-North–East lattice paths from (0,0) to (n,n) in which any two paths share an even number of edges has at
-most 2^n members. For a noncrossing perfect matching M of {1, …, 2n}, the paths whose steps differ at the
-two ends of every pair of M form such a family F_M of size 2^n, so there are at least C_n extremal families.
-Shankar conjectured that there are no others (his Conjecture 4.1, checked by him for n ≤ 5).
-
-The conjecture is true. The paper proves:
-
-1. **Theorem 1.1.** Every family of 2^n paths from (0,0) to (n,n) with pairwise even intersections is F_M
-   for a noncrossing perfect matching M; so there are exactly C_n of them.
-2. **Theorem 1.2.** Shankar's bound comes from an inequality Σ|A|² ≤ 2^m for "admissible systems" of sets
-   of binary words of length m (his Lemma 2.3). Equality holds exactly for the *skeleton systems*: take a
-   noncrossing partial matching of {1, …, m} whose unmatched points lie under no arc, and group the words
-   that alternate on every arc by their letters at the unmatched points.
-3. **Corollary 1.3.** There are exactly C(m, ⌊m/2⌋) extremal admissible systems of length m.
-
-The proof follows Shankar's induction, which deletes the last letter. For an extremal system the two
-systems of length m − 1 it produces coincide (a merging argument on overlapping classes), so by induction
-they form a skeleton system, and the system of length m comes from pairing some of its classes. A
-rigidity lemma (Lemma 4.1) says that two words of adjacent weights that no word of another weight can
-tell apart differ only in the last letter, or form the pair 1(10)^j, 0(01)^j; its proof flips paths across
-unit squares, which shows that the vertex sets of the two paths differ by a pattern constant along
-diagonals. A counting argument removes the exceptional pair, and only two pairings survive; each gives
-a skeleton system of length m.
-
-### Paper
-
-`preprintLatticePaths/` holds the LaTeX source and the TikZ figures; `dist/` holds the PDF, a source zip
-(figures as PNG) and an arXiv tarball (figures as PDF), rebuilt by `scripts/build_paper.sh`.
-
-### Checks
-
-```
-verification/c/star_lemma.c            for every word length k <= 13: the cell identity (Lemma 4.2) at every
-                                       path and unit square, the star lemma (Lemma 4.1) from its hypotheses,
-                                       and the formula of Lemma 5.2 for canonical pairs
-verification/cpp/skeletons.cpp         skeleton systems: B_m(x,y) = B_k(a,a') pair by pair, admissible and
-                                       extremal, all different, C(m, m/2) of them (m <= 10); an exhaustive
-                                       search over all admissible systems of length m <= 5, built from all
-                                       partial set partitions of each weight level: the largest total of
-                                       squares is 2^m and the extremal systems are the skeleton systems;
-                                       the C_n families F_M for n <= 6
-verification/shell/check_paths.sh      bash integer arithmetic only: the star lemma for k <= 6; Shankar's
-                                       conjecture for n <= 3 by counting cliques (1, 2, 5, none larger);
-                                       skeleton counts for m <= 16
-verification/python/verify_sat.py      SAT (python-sat, CaDiCaL): all extremal admissible systems of length
-                                       m <= 6 are the skeleton systems and none beats 2^m; Shankar's
-                                       conjecture for n <= 5 (1, 2, 5, 14, 42 families, none larger);
-                                       Proposition 5.1 for k <= 7; the star lemma for k <= 9
-verification/julia/verify_systems.jl   the bijection between skeletons and nonnegative paths (m <= 14) and
-                                       its count (m <= 22); the induction step of Section 3 on every skeleton
-                                       system of length m <= 9; Proposition 5.1 for k <= 4 by depth-first
-                                       search; the families F_M for n <= 7 with edges counted as edges
-verification/lean/LatticePaths.lean    Lean 4 kernel checks (decide +kernel, no Mathlib): the star lemma for
-                                       k <= 6, Lemma 5.2 for k <= 7, Proposition 2.2 for m <= 6, the
-                                       skeleton count for m <= 12, and Shankar's conjecture for n <= 3
-```
-
-The proofs in the paper are by hand and cover every n and m; the programs check the statements and the
-key lemmas independently on all small cases.
-
-`scripts/run_all.sh` runs them all (`QUICK=1` stops the SAT checks at m <= 5 and n <= 4); the `verify`
-workflow runs them on every pull request.
-
-## Citation
-
-Cite the GitHub release; see `CITATION.cff`.
-
-| Release | Link |
+| theorem | statement |
 |---|---|
-| v2.0.0 | https://github.com/creelie/eConjecturePrimitiveTrinomial/releases/tag/v2.0.0, DOI [10.5281/zenodo.24090676](https://doi.org/10.5281/zenodo.24090676) |
-| v2.1.0 | https://github.com/creelie/eConjecturePrimitiveTrinomial/releases/tag/v2.1.0, DOI [10.5281/zenodo.24091548](https://doi.org/10.5281/zenodo.24091548) |
-| v2.2.0 | https://github.com/creelie/eConjecturePrimitiveTrinomial/releases/tag/v2.2.0, DOI [10.5281/zenodo.24124754](https://doi.org/10.5281/zenodo.24124754) |
-| v1.1.0 | https://github.com/creelie/eConjecturePrimitiveTrinomial/releases/tag/v1.1.0 |
-| v1.0.0 | https://github.com/creelie/eConjecturePrimitiveTrinomial/releases/tag/v1.0.0 |
+| `star_lemma`, `canonical_pairs`, `skeleton_identity`, `skeleton_count` | the star lemma for k <= 6, the canonical pairs for k <= 7, the skeleton identity for m <= 6, the number C(m, floor(m/2)) of skeletons for m <= 12 |
+| `shankar_n1`, `shankar_n2`, `shankar_n3` | for n <= 3 there are exactly C_n families of 2^n paths with pairwise even numbers of common edges, and none of 2^n + 1 paths |
+| `three_rows_even` | for a = 4, 8, 10, 12 the family T_a has 2a - 2 paths from (0,0) to (a,3), pairwise with an even number of common edges |
+| `square_odd` | the families F_10 and F_12 have 33 and 54 paths in the square, pairwise with an odd number of common edges |
+| `odd_family_7`, `odd_family_8` | explicit families of 23 paths (side 7) and 31 paths (side 8), pairwise with an odd number of common edges |
+| `block_families_dim3`, `_dim4`, `_dim5` | over d letters the d^r concatenations of r blocks ab, ba, cc pairwise share an even number of edges (d = 3, 4: r <= 3; d = 5: r <= 2) |
 
-## Licence
+`Enumerative.lean` (polynomials are lists of integer coefficients):
 
-MIT, see `LICENSE`.
+| theorem | statement |
+|---|---|
+| `eulerian_des`, `eulerian_exc` | descents and excedances over S_n are Eulerian, n <= 7, by enumeration |
+| `mantaci`, `desarmenien_foata` | the two signed identities for n <= 7, by enumeration |
+| `small_even_odd` | P_3, P_4, Q_4, P_5, Q_5 by enumeration of the even and odd permutations |
+| `p5_identity` | 2 P_5 = A_5 + (1 - t)^4 and 4 P_5 = (2t^2 + 11t + 2)^2 + 15 t^2 as coefficient lists |
+| `caged_example` | c(6 7 2 1 5 9 8 3 4) = 3 with exactly 16 maximal pairs |
+| `dumont_small`, `dumont_table` | a(n, j) by enumeration equals the closed formula for n <= 4; the rows n = 4, 8 of the table |
+| `q_values` | Q_0, ..., Q_24 by dynamic programming from the definition |
+| `hankel_shifted`, `hankel_unshifted` | det(Q_(i+j+1))_{12x12} and det(Q_(i+j))_{13x13} are the stated negative integers, by fraction-free elimination and by the division-free characteristic polynomial |
+| `hankel_minors_positive` | the smaller leading Hankel determinants are positive |
+| `steiner_path` | 2-Steiner matrix of the path P_n, 3 <= n <= 10: a_0 = -(n-1), a_(2n-4) = -(3n-5), a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 |
+| `steiner_peak` | for 6 <= n <= 10 the largest \|a_i\|, i <= 2n-4, is at i = n-1 only |
+
+## Julia (`julia/`)
+
+Julia 1.11, standard library only. Each script prints `PASS:` / `FAIL:` lines and ends with
+`SUMMARY: p passed, f failed`; `run_all.jl` runs all of them and prints the total
+(653 passed, 0 failed, about 16 minutes; the output is kept in `run_all.log`).
+
+    julia run_all.jl
+
+| script | what it checks |
+|---|---|
+| `verify_systems.jl` | skeletons and nonnegative paths (m <= 22), the induction step on skeleton systems (m <= 9), the groupings (k <= 4), the families F_M (n <= 7) |
+| `odd_families.jl` | the odd families of `data/best7.txt`, `best8.txt`, `best9.txt` (23, 31, 36 paths); the three-row families T_a for even a <= 60; the window families in the square for n <= 30, pair by pair, with their sizes and the bound n^2/2 - 3n |
+| `blocks.jl` | block families over d = 2, ..., 6 letters; the weighted inequality for all families with (d, m) = (3, 2), (2, 4) and for greedy maximal families with (d, m) = (3, 4), (4, 3), (4, 4) |
+| `regions.jl` | n <= 6: heights in F_M, strips and random regions, a forbidden point, Dyck paths (largest even family 2^(n-1), unique, by exact clique search), intersections 2^c for pairs and triples, numbers of meander systems, the Gram matrix is nonsingular with the product formula for its determinant |
+| `searches.jl` | every exhaustive search reported in Sections 4 to 7, by exact maximum-clique search: the table of M(a,b), M*(a,b); two rows for a <= 22; three and four rows; Modd(n,n) for n <= 6; Modd(n+1,n) = 2^n for n <= 5 with the C_(n+1) families for n <= 4; free endpoints; tau and the column space of A_(a,b); pairs of matchings by loops; sigma(M); families through (i, i+1); the table of 26 boxes; free endpoints over d letters |
+| `eulerian.jl` | Eulerian numbers and the signed identities for n <= 8 by enumeration; the identity for P_5; exact numbers of real roots of B_n, C_n, P_n, Q_n for 2 <= n <= 60 by Sturm sequences (only P_3, P_4, Q_4, P_5 have non-real roots) |
+| `canon.jl` | descent polynomials of the 321-avoiding canon words for k <= 110 (log-concave), their numbers of nonreal zeros for k <= 45, and the classes of lattice words on four letters for k <= 6 |
+| `caged.jl` | the example for n = 9; exhaustive search for 5 <= n <= 10 and the counts of extremal permutations, orbits and extremal n-cycles for n <= 14; the permutations beta(mu) for k <= 5; the five-term inequality for n <= 8; the n-cycle construction for 8 <= n <= 60 and the ten explicit cycles |
+| `dumont.jl` | a(n, j) for n <= 7 by enumeration against the closed formula; the transfer recursion, the table, the recurrence, the polynomials G_j, the first-letter count |
+| `hankel.jl` | Q_k by enumeration (k <= 5), by two dynamic programmes and by Shankar's multisum (k <= 24); the two Hankel determinants by rational and by fraction-free elimination; an explicit vector v with v^T H v < 0 |
+| `steiner.jl` | characteristic polynomials of the 2-Steiner matrix of P_n for 3 <= n <= 60 (two methods for n <= 16); the formula for a_(2n-5); the unique index of the largest coefficient for 6 <= n <= 60 |
+| `common.jl` | shared helpers (common edges, permutations, exact determinants) |
