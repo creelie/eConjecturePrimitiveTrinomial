@@ -1,24 +1,24 @@
 {
-  "title": "Catalan Rigidity of Even Lattice Paths",
-  "version": "2.2.0",
+  "title": "Parity Families of Lattice Paths and Real-Rooted Signed Eulerian Polynomials",
+  "version": "3.0.0",
   "upload_type": "publication",
   "publication_type": "preprint",
   "creators": [
     {
       "name": "Bhattacharjee, Deep",
       "orcid": "0000-0003-0466-750X",
-      "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India"
+      "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India; Formerly, University of Calcutta (Heramba Chandra College), Kolkata 700029, India"
     }
   ],
-  "description": "<p>A family of North&ndash;East lattice paths from (0,0) to (n,n) in which any two paths share an even number of edges has at most 2<sup>n</sup> members. We prove Shankar's conjecture (arXiv:2607.23117, Conjecture 4.1) that exactly C<sub>n</sub> families attain this bound, one for each noncrossing perfect matching, by classifying all equality cases of the underlying inequality: they are the skeleton systems, and there are C(m,&lfloor;m/2&rfloor;) of them. We also compute the binary rank of every grid graph, ab &minus; gcd(a+1,b+1) + 1, give eventown and oddtown bounds for paths in every rectangle, show that the odd families of paths from (0,0) to (n+1,n) of size 2<sup>n</sup> number at least C<sub>n+1</sub>, determine the largest odd family in the n &times; n square for n &le; 6 (1, 2, 3, 6, 10, 16) with lower bounds 20 and 28 for n = 7, 8, and construct even and odd families in the a &times; 2 rectangle of sizes &lfloor;a/2&rfloor;+3, &lfloor;(5a&minus;1)/4&rfloor; and &lfloor;(5a&minus;2)/4&rfloor;, optimal for a &le; 22. The growth of the largest odd family in the square, whether 2<sup>n</sup> bounds the odd families from (0,0) to (n+1,n), and the exact even value in non-square rectangles remain open. The second of these problems is reduced to a conjecture on paths with free endpoints: a set of paths of odd length m from (0,0) with pairwise odd numbers of common edges has at most 2<sup>(m&minus;1)/2</sup> members, verified for m &le; 9.</p><p>The archive contains the paper (preprintCatalanRigidity: LaTeX source and PNG figures; dist: PDF and tex zip), the maximum clique search, the search for paths with free endpoints and the checks of the two-row families (verification/catalan-rigidity), and the earlier paper on Shankar's conjecture with its checks in C, C++, Bash, Python, Julia and Lean 4.</p>",
+  "description": "<p>We classify the extremal families of lattice paths with pairwise even numbers of common edges for every length and endpoint, which gives Shankar's Catalan conjecture, compute the binary rank of grid graphs, and double the lower bound for odd families in the square. We prove that the signed Eulerian polynomials are real-rooted, as Fulman, Kim, Lee and Petersen conjectured, and settle conjectures on canon, caged and Dumont permutations.</p><p>The archive contains the paper (paper/LatticePathsPaper.pdf), a Lean 4 certificate of its finite identities (lean/, 29 theorems, core library only, no axioms) and Julia programs that check every computed statement of the paper (julia/).</p>",
   "keywords": [
     "lattice paths",
-    "Catalan numbers",
-    "parity intersection theorems",
+    "eventown and oddtown",
+    "real-rooted polynomials",
     "05A15",
     "05D05",
-    "05C50",
-    "15B33"
+    "05A05",
+    "26C10"
   ],
   "license": "MIT",
   "language": "eng",
@@ -27,13 +27,7 @@
       "identifier": "https://github.com/creelie/eConjecturePrimitiveTrinomial",
       "relation": "isSupplementedBy",
       "resource_type": "software"
-    },
-    {
-      "identifier": "arXiv:2607.23117",
-      "relation": "references",
-      "resource_type": "publication-preprint",
-      "scheme": "arxiv"
     }
   ],
-  "notes": "Corresponding author: d.bhattacharjee@erl-forschung.de; also itsdeep@live.com."
+  "notes": "Corresponding author: d.bhattacharjee@erl-forschung.de; also itsdeep@live.com. GitHub-related contact: egspl@proton.me."
 }

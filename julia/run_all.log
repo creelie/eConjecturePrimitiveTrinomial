@@ -1,0 +1,773 @@
+==============================================================================
+### verify_systems.jl
+== Proposition 3.13: skeletons and nonnegative paths
+m=2  skeletons=2  nonnegative paths=2  C(m,floor(m/2))=2
+m=6  skeletons=20  nonnegative paths=20  C(m,floor(m/2))=20
+m=10  skeletons=252  nonnegative paths=252  C(m,floor(m/2))=252
+m=14  skeletons=3432  nonnegative paths=3432  C(m,floor(m/2))=3432
+m=18  skeletons=48620  nonnegative paths=48620  C(m,floor(m/2))=48620
+m=22  skeletons=705432  nonnegative paths=705432  C(m,floor(m/2))=705432
+PASS: Proposition 3.13: C(m, floor(m/2)) skeletons for m <= 22, bijection with nonnegative paths for m <= 14
+== Section 3: deleting the last letter
+PASS: Section 3: G_0 = G_1 = predicted skeleton system for every skeleton of [m], m <= 9
+== Proposition 3.12: groupings by depth-first search
+k=0  groupings found=1  (none, all canonical): true
+k=1  groupings found=2  (none, all canonical): true
+k=2  groupings found=2  (none, all canonical): true
+k=3  groupings found=2  (none, all canonical): true
+k=4  groupings found=2  (none, all canonical): true
+PASS: Proposition 3.12: the groupings are none and all canonical (one grouping for k = 0), k <= 4
+== Theorem A: the families F_M
+n=1  families=1  C_n=1
+n=2  families=2  C_n=2
+n=3  families=5  C_n=5
+n=4  families=14  C_n=14
+n=5  families=42  C_n=42
+n=6  families=132  C_n=132
+n=7  families=429  C_n=429
+PASS: Theorem A: the C_n families F_M are distinct, of size 2^n and pairwise even, n <= 7
+(10252 single cases checked)
+SUMMARY: 4 passed, 0 failed
+==============================================================================
+### odd_families.jl
+== families found by search
+PASS: side 7: 23 distinct words
+PASS: side 7: paths from (0,0) to (7,7)
+PASS: side 7: pairwise odd numbers of common edges
+PASS: side 7: the same with edges compared as sets
+PASS: side 8: 31 distinct words
+PASS: side 8: paths from (0,0) to (8,8)
+PASS: side 8: pairwise odd numbers of common edges
+PASS: side 8: the same with edges compared as sets
+PASS: side 9: 36 distinct words
+PASS: side 9: paths from (0,0) to (9,9)
+PASS: side 9: pairwise odd numbers of common edges
+PASS: side 9: the same with edges compared as sets
+== three rows
+PASS: T_4: 6 paths to (4,3), pairwise even
+PASS: T_6: 9 paths to (6,3), pairwise even
+PASS: T_8: 14 paths to (8,3), pairwise even
+PASS: T_10: 18 paths to (10,3), pairwise even
+PASS: T_12: 22 paths to (12,3), pairwise even
+PASS: T_20: 38 paths to (20,3), pairwise even
+PASS: T_30: 58 paths to (30,3), pairwise even
+PASS: T_40: 78 paths to (40,3), pairwise even
+PASS: T_50: 98 paths to (50,3), pairwise even
+PASS: T_60: 118 paths to (60,3), pairwise even
+PASS: T_a is an even family of size 2a-2 (9 for a = 6) for every even a, 4 <= a <= 60
+PASS: the same with edges compared as sets, a <= 16
+== the square
+PASS: F_1: 1 paths in the square of side 1, pairwise odd
+PASS: |F_1| = 1 >= n^2/2 - 3n = -2.5
+PASS: F_2: 2 paths in the square of side 2, pairwise odd
+PASS: |F_2| = 2 >= n^2/2 - 3n = -4.0
+PASS: F_3: 3 paths in the square of side 3, pairwise odd
+PASS: |F_3| = 3 >= n^2/2 - 3n = -4.5
+PASS: F_4: 6 paths in the square of side 4, pairwise odd
+PASS: |F_4| = 6 >= n^2/2 - 3n = -4.0
+PASS: F_5: 10 paths in the square of side 5, pairwise odd
+PASS: |F_5| = 10 >= n^2/2 - 3n = -2.5
+PASS: F_6: 9 paths in the square of side 6, pairwise odd
+PASS: |F_6| = 9 >= n^2/2 - 3n = 0.0
+PASS: F_7: 9 paths in the square of side 7, pairwise odd
+PASS: |F_7| = 9 >= n^2/2 - 3n = 3.5
+PASS: F_8: 18 paths in the square of side 8, pairwise odd
+PASS: |F_8| = 18 >= n^2/2 - 3n = 8.0
+PASS: F_9: 18 paths in the square of side 9, pairwise odd
+PASS: |F_9| = 18 >= n^2/2 - 3n = 13.5
+PASS: F_10: 33 paths in the square of side 10, pairwise odd
+PASS: |F_10| = 33 >= n^2/2 - 3n = 20.0
+PASS: |F_10| is given by the formula
+PASS: F_11: 33 paths in the square of side 11, pairwise odd
+PASS: |F_11| = 33 >= n^2/2 - 3n = 27.5
+PASS: F_12: 54 paths in the square of side 12, pairwise odd
+PASS: |F_12| = 54 >= n^2/2 - 3n = 36.0
+PASS: |F_12| is given by the formula
+PASS: F_13: 54 paths in the square of side 13, pairwise odd
+PASS: |F_13| = 54 >= n^2/2 - 3n = 45.5
+PASS: F_14: 73 paths in the square of side 14, pairwise odd
+PASS: |F_14| = 73 >= n^2/2 - 3n = 56.0
+PASS: |F_14| is given by the formula
+PASS: F_15: 73 paths in the square of side 15, pairwise odd
+PASS: |F_15| = 73 >= n^2/2 - 3n = 67.5
+PASS: F_16: 104 paths in the square of side 16, pairwise odd
+PASS: |F_16| = 104 >= n^2/2 - 3n = 80.0
+PASS: |F_16| is given by the formula
+PASS: F_17: 104 paths in the square of side 17, pairwise odd
+PASS: |F_17| = 104 >= n^2/2 - 3n = 93.5
+PASS: F_18: 129 paths in the square of side 18, pairwise odd
+PASS: |F_18| = 129 >= n^2/2 - 3n = 108.0
+PASS: |F_18| is given by the formula
+PASS: F_19: 129 paths in the square of side 19, pairwise odd
+PASS: |F_19| = 129 >= n^2/2 - 3n = 123.5
+PASS: F_20: 170 paths in the square of side 20, pairwise odd
+PASS: |F_20| = 170 >= n^2/2 - 3n = 140.0
+PASS: |F_20| is given by the formula
+PASS: F_21: 170 paths in the square of side 21, pairwise odd
+PASS: |F_21| = 170 >= n^2/2 - 3n = 157.5
+PASS: F_22: 201 paths in the square of side 22, pairwise odd
+PASS: |F_22| = 201 >= n^2/2 - 3n = 176.0
+PASS: |F_22| is given by the formula
+PASS: F_23: 201 paths in the square of side 23, pairwise odd
+PASS: |F_23| = 201 >= n^2/2 - 3n = 195.5
+PASS: F_24: 252 paths in the square of side 24, pairwise odd
+PASS: |F_24| = 252 >= n^2/2 - 3n = 216.0
+PASS: |F_24| is given by the formula
+PASS: F_25: 252 paths in the square of side 25, pairwise odd
+PASS: |F_25| = 252 >= n^2/2 - 3n = 237.5
+PASS: F_26: 289 paths in the square of side 26, pairwise odd
+PASS: |F_26| = 289 >= n^2/2 - 3n = 260.0
+PASS: |F_26| is given by the formula
+PASS: F_27: 289 paths in the square of side 27, pairwise odd
+PASS: |F_27| = 289 >= n^2/2 - 3n = 283.5
+PASS: F_28: 350 paths in the square of side 28, pairwise odd
+PASS: |F_28| = 350 >= n^2/2 - 3n = 308.0
+PASS: |F_28| is given by the formula
+PASS: F_29: 350 paths in the square of side 29, pairwise odd
+PASS: |F_29| = 350 >= n^2/2 - 3n = 333.5
+PASS: F_30: 393 paths in the square of side 30, pairwise odd
+PASS: |F_30| = 393 >= n^2/2 - 3n = 360.0
+PASS: |F_30| is given by the formula
+PASS: F_n pairwise odd with edges compared as sets, 6 <= n <= 14
+PASS: |F_n| > (n/2)^2 for even n, 10 <= n <= 30
+SUMMARY: 97 passed, 0 failed
+==============================================================================
+### blocks.jl
+== block families
+PASS: d=2, r=1: 2 words of length 2, pairwise even
+PASS: d=2, r=2: 4 words of length 4, pairwise even
+PASS: d=2, r=3: 8 words of length 6, pairwise even
+PASS: d=2, r=4: 16 words of length 8, pairwise even
+PASS: d=2, r=5: 32 words of length 10, pairwise even
+PASS: d=3, r=1: 3 words of length 2, pairwise even
+PASS: d=3, r=2: 9 words of length 4, pairwise even
+PASS: d=3, r=3: 27 words of length 6, pairwise even
+PASS: d=3, r=4: 81 words of length 8, pairwise even
+PASS: d=4, r=1: 4 words of length 2, pairwise even
+PASS: d=4, r=2: 16 words of length 4, pairwise even
+PASS: d=4, r=3: 64 words of length 6, pairwise even
+PASS: d=5, r=1: 5 words of length 2, pairwise even
+PASS: d=5, r=2: 25 words of length 4, pairwise even
+PASS: d=5, r=3: 125 words of length 6, pairwise even
+PASS: d=6, r=1: 6 words of length 2, pairwise even
+PASS: d=6, r=2: 36 words of length 4, pairwise even
+PASS: pairs [(0, 1)], single letters [2, 3], r=3: 64 words, pairwise even
+PASS: pairs Tuple{Int64, Int64}[], single letters [0, 1, 2], r=3: 27 words, pairwise even
+PASS: pairs [(0, 2)], single letters [1], r=3: 27 words, pairwise even
+PASS: pairs [(0, 3), (1, 2)], single letters Int64[], r=3: 64 words, pairwise even
+PASS: d=3: 12 block words end at (2,2,2)
+PASS: d=3, r=3: sum of squares of class sizes <= 3^6
+== weighted inequality
+PASS: d=3, m=2: the inequality holds for all 64 families
+PASS: d=2, m=4: the inequality holds for all 269 families
+PASS: d=3, m=4: the inequality holds for 300 greedy maximal families (largest has 9 words)
+PASS: d=4, m=3: the inequality holds for 300 greedy maximal families (largest has 4 words)
+PASS: d=4, m=4: the inequality holds for 100 greedy maximal families (largest has 16 words)
+SUMMARY: 28 passed, 0 failed
+==============================================================================
+### regions.jl
+PASS: C_n matchings and C_n distinct families, n <= 6
+== heights
+PASS: number of words of F_M at a given height, n=1
+PASS: number of words of F_M at a given height, n=2
+PASS: number of words of F_M at a given height, n=3
+PASS: number of words of F_M at a given height, n=4
+PASS: number of words of F_M at a given height, n=5
+PASS: number of words of F_M at a given height, n=6
+== regions
+PASS: strip of half width 1: the families inside are those of height <= 1; counts [1, 1, 1, 1, 1, 1]
+PASS: strip of half width 2: the families inside are those of height <= 2; counts [1, 2, 4, 8, 16, 32]
+PASS: strip of half width 3: the families inside are those of height <= 3; counts [1, 2, 5, 13, 34, 89]
+PASS: strip of half width 4: the families inside are those of height <= 4; counts [1, 2, 5, 14, 41, 122]
+PASS: strip of half width 5: the families inside are those of height <= 5; counts [1, 2, 5, 14, 42, 131]
+PASS: F_M lies in the region L <= height <= U iff d_M <= min(U, -L) (240 random regions, n <= 5)
+== a forbidden point
+PASS: number of families avoiding a point, all points, n=1
+PASS: number of families avoiding a point, all points, n=2
+PASS: number of families avoiding a point, all points, n=3
+PASS: number of families avoiding a point, all points, n=4
+PASS: number of families avoiding a point, all points, n=5
+PASS: number of families avoiding a point, all points, n=6
+== Dyck paths
+PASS: N u_1 ... u_(n-1) E: 2^(n-1) = 1 Dyck paths, pairwise even, n=1
+PASS: N u_1 ... u_(n-1) E: 2^(n-1) = 2 Dyck paths, pairwise even, n=2
+PASS: N u_1 ... u_(n-1) E: 2^(n-1) = 4 Dyck paths, pairwise even, n=3
+PASS: N u_1 ... u_(n-1) E: 2^(n-1) = 8 Dyck paths, pairwise even, n=4
+PASS: N u_1 ... u_(n-1) E: 2^(n-1) = 16 Dyck paths, pairwise even, n=5
+PASS: N u_1 ... u_(n-1) E: 2^(n-1) = 32 Dyck paths, pairwise even, n=6
+PASS: N u_1 ... u_(n-1) E: 2^(n-1) = 64 Dyck paths, pairwise even, n=7
+PASS: N u_1 ... u_(n-1) E: 2^(n-1) = 128 Dyck paths, pairwise even, n=8
+PASS: Dyck paths, n=1: the largest even family has 1 = 2^(n-1) paths and there is 1 such family
+PASS: Dyck paths, n=2: the largest even family has 2 = 2^(n-1) paths and there is 1 such family
+PASS: Dyck paths, n=3: the largest even family has 4 = 2^(n-1) paths and there is 1 such family
+PASS: Dyck paths, n=4: the largest even family has 8 = 2^(n-1) paths and there is 1 such family
+PASS: Dyck paths, n=5: the largest even family has 16 = 2^(n-1) paths and there is 1 such family
+PASS: Dyck paths, n=6: the largest even family has 32 = 2^(n-1) paths and there is 1 such family
+== intersections
+PASS: |F_M n F_M'| = 2^c for all 1 ordered pairs, n=1
+PASS: pairs by number of loops: [1], n=1
+PASS: the intersection of all families is the two staircases, n=1
+PASS: sum_p f(p)^2 = sum of 2^c = 2, n=1
+PASS: |F_M n F_M'| = 2^c for all 4 ordered pairs, n=2
+PASS: pairs by number of loops: [2, 2], n=2
+PASS: pairs sharing 2^(n-1) paths: 2 C(2n, n-2) = 2, n=2
+PASS: the intersection of all families is the two staircases, n=2
+PASS: sum_p f(p)^2 = sum of 2^c = 12, n=2
+PASS: |F_M n F_M'| = 2^c for all 25 ordered pairs, n=3
+PASS: pairs by number of loops: [8, 12, 5], n=3
+PASS: pairs sharing 2^(n-1) paths: 2 C(2n, n-2) = 12, n=3
+PASS: the intersection of all families is the two staircases, n=3
+PASS: sum_p f(p)^2 = sum of 2^c = 104, n=3
+PASS: |F_M n F_M'| = 2^c for all 196 ordered pairs, n=4
+PASS: pairs by number of loops: [42, 84, 56, 14], n=4
+PASS: pairs sharing 2^(n-1) paths: 2 C(2n, n-2) = 56, n=4
+PASS: the intersection of all families is the two staircases, n=4
+PASS: sum_p f(p)^2 = sum of 2^c = 1092, n=4
+PASS: |F_M n F_M'| = 2^c for all 1764 ordered pairs, n=5
+PASS: pairs by number of loops: [262, 640, 580, 240, 42], n=5
+PASS: pairs sharing 2^(n-1) paths: 2 C(2n, n-2) = 240, n=5
+PASS: the intersection of all families is the two staircases, n=5
+PASS: sum_p f(p)^2 = sum of 2^c = 12908, n=5
+PASS: |F_M n F_M'| = 2^c for all 17424 ordered pairs, n=6
+PASS: pairs by number of loops: [1828, 5236, 5894, 3344, 990, 132], n=6
+PASS: pairs sharing 2^(n-1) paths: 2 C(2n, n-2) = 990, n=6
+PASS: the intersection of all families is the two staircases, n=6
+PASS: sum_p f(p)^2 = sum of 2^c = 165384, n=6
+PASS: |F_M1 n F_M2 n F_M3| = 2^c for all triples, n=1
+PASS: |F_M1 n F_M2 n F_M3| = 2^c for all triples, n=2
+PASS: |F_M1 n F_M2 n F_M3| = 2^c for all triples, n=3
+PASS: |F_M1 n F_M2 n F_M3| = 2^c for all triples, n=4
+== Gram matrix
+PASS: det of the Gram matrix is nonzero and equals prod (i+1)^a(n,i) (1 digits), n=1
+PASS: det of the Gram matrix is nonzero and equals prod (i+1)^a(n,i) (2 digits), n=2
+PASS: det of the Gram matrix is nonzero and equals prod (i+1)^a(n,i) (4 digits), n=3
+PASS: det of the Gram matrix is nonzero and equals prod (i+1)^a(n,i) (13 digits), n=4
+PASS: det of the Gram matrix is nonzero and equals prod (i+1)^a(n,i) (46 digits), n=5
+PASS: det of the Gram matrix is nonzero and equals prod (i+1)^a(n,i) (164 digits), n=6
+PASS: determinant by rational elimination agrees (n = 4); det G_3 = 5184
+SUMMARY: 73 passed, 0 failed
+==============================================================================
+### eulerian.jl
+== Eulerian numbers and the signed identities by enumeration
+PASS: the two recurrences for A_n agree, n <= 60
+PASS: A_n(1) = n!, n <= 60
+PASS: descents and excedances are Eulerian, n=1
+PASS: Mantaci: signed excedance polynomial = (1-t)^(n-1), n=1
+PASS: Desarmenien-Foata: signed descent polynomial, n=1
+PASS: B_n, C_n, P_n, Q_n from the identities, n=1
+PASS: descents and excedances are Eulerian, n=2
+PASS: Mantaci: signed excedance polynomial = (1-t)^(n-1), n=2
+PASS: Desarmenien-Foata: signed descent polynomial, n=2
+PASS: B_n, C_n, P_n, Q_n from the identities, n=2
+PASS: descents and excedances are Eulerian, n=3
+PASS: Mantaci: signed excedance polynomial = (1-t)^(n-1), n=3
+PASS: Desarmenien-Foata: signed descent polynomial, n=3
+PASS: B_n, C_n, P_n, Q_n from the identities, n=3
+PASS: descents and excedances are Eulerian, n=4
+PASS: Mantaci: signed excedance polynomial = (1-t)^(n-1), n=4
+PASS: Desarmenien-Foata: signed descent polynomial, n=4
+PASS: B_n, C_n, P_n, Q_n from the identities, n=4
+PASS: descents and excedances are Eulerian, n=5
+PASS: Mantaci: signed excedance polynomial = (1-t)^(n-1), n=5
+PASS: Desarmenien-Foata: signed descent polynomial, n=5
+PASS: B_n, C_n, P_n, Q_n from the identities, n=5
+PASS: descents and excedances are Eulerian, n=6
+PASS: Mantaci: signed excedance polynomial = (1-t)^(n-1), n=6
+PASS: Desarmenien-Foata: signed descent polynomial, n=6
+PASS: B_n, C_n, P_n, Q_n from the identities, n=6
+PASS: descents and excedances are Eulerian, n=7
+PASS: Mantaci: signed excedance polynomial = (1-t)^(n-1), n=7
+PASS: Desarmenien-Foata: signed descent polynomial, n=7
+PASS: B_n, C_n, P_n, Q_n from the identities, n=7
+PASS: descents and excedances are Eulerian, n=8
+PASS: Mantaci: signed excedance polynomial = (1-t)^(n-1), n=8
+PASS: Desarmenien-Foata: signed descent polynomial, n=8
+PASS: B_n, C_n, P_n, Q_n from the identities, n=8
+== P_5
+PASS: P_5 = 1 + 11t + 36t^2 + 11t^3 + t^4
+PASS: 4 P_5 = (2t^2 + 11t + 2)^2 + 15 t^2
+PASS: discriminant of u^2 + 11u + 34 is negative
+PASS: P_3 = 1+t+t^2, P_4 = 1+4t+7t^2, Q_4 = t(7+4t+t^2), Q_5 = 15t(1+t)^2
+== Sturm sequences
+PASS: Sturm test: (t-1)(t-2)(t-3)
+PASS: Sturm test: t^2 + 1
+PASS: Sturm test: (t-1)^2 (t^2+1)
+PASS: Sturm test: (t+3)^4 (t^2-2)
+PASS: Sturm test: t^4 -+ 3t^2 + 2
+PASS: P_5 has no real root
+   n <= 10 done
+   n <= 20 done
+   n <= 30 done
+   n <= 40 done
+   n <= 50 done
+   n <= 60 done
+   polynomials with a non-real root: [(3, :P), (4, :P), (4, :Q), (5, :P)]
+PASS: B_n, C_n, P_n, Q_n have only real roots for 2 <= n <= 60 except P_3, P_4, Q_4, P_5
+PASS: all coefficients are nonnegative, so the real roots are <= 0
+SUMMARY: 46 passed, 0 failed
+==============================================================================
+### caged.jl
+== the example for n = 9
+PASS: c(6 7 2 1 5 9 8 3 4) = 3 with exactly 16 maximal pairs
+== exhaustive search
+PASS: c(p) >= floor(n/5) + 2 = 3 for all permutations, n=5
+PASS: n=5: 60 permutations with c = 3, of which 16 are n-cycles
+PASS: c(p) >= floor(n/5) + 2 = 3 for all permutations, n=6
+PASS: n=6: 140 permutations with c = 3, of which 30 are n-cycles
+PASS: c(p) >= floor(n/5) + 2 = 3 for all permutations, n=7
+PASS: n=7: 230 permutations with c = 3, of which 38 are n-cycles
+PASS: c(p) >= floor(n/5) + 2 = 3 for all permutations, n=8
+PASS: n=8: 196 permutations with c = 3, of which 18 are n-cycles
+PASS: c(p) >= floor(n/5) + 2 = 3 for all permutations, n=9
+PASS: n=9: 2 permutations with c = 3, of which 0 are n-cycles
+PASS: n=9: the two extremal permutations are 6 7 2 1 5 9 8 3 4 and its complement
+PASS: n=9: both have 16 maximal pairs
+PASS: c(p) >= floor(n/5) + 2 = 4 for all permutations, n=10
+PASS: n=10: 42604 permutations with c = 4, of which 5178 are n-cycles
+== the permutations beta(mu), n = 5k + 4
+PASS: k=1, n=9: all 1 arrangements give c = 3, 16 maximal pairs and the 4-cycle
+PASS: k=2, n=14: all 2 arrangements give c = 4, 30 maximal pairs and the 4-cycle
+PASS: k=3, n=19: all 6 arrangements give c = 5, 48 maximal pairs and the 4-cycle
+PASS: k=4, n=24: all 24 arrangements give c = 6, 70 maximal pairs and the 4-cycle
+PASS: k=5, n=29: all 120 arrangements give c = 7, 96 maximal pairs and the 4-cycle
+PASS: beta for k = 1 is 6 7 2 1 5 9 8 3 4
+== the five-term inequality
+PASS: five-term inequality and its equality case, n=2
+PASS: five-term inequality and its equality case, n=3
+PASS: five-term inequality and its equality case, n=4
+PASS: five-term inequality and its equality case, n=5
+PASS: five-term inequality and its equality case, n=6
+PASS: five-term inequality and its equality case, n=7
+PASS: five-term inequality and its equality case, n=8
+== n-cycles
+PASS: n=8: an n-cycle with c = 4 <= floor(n/5) + 3 = 4
+PASS: n=9: an n-cycle with c = 4 <= floor(n/5) + 3 = 4
+PASS: n=10: the construction does not apply (n in {10, 11, 15})
+PASS: n=11: the construction does not apply (n in {10, 11, 15})
+PASS: n=12: an n-cycle with c = 5 <= floor(n/5) + 3 = 5
+PASS: n=13: an n-cycle with c = 5 <= floor(n/5) + 3 = 5
+PASS: n=14: an n-cycle with c = 5 <= floor(n/5) + 3 = 5
+PASS: n=15: the construction does not apply (n in {10, 11, 15})
+PASS: n=16: an n-cycle with c = 6 <= floor(n/5) + 3 = 6
+PASS: n=17: an n-cycle with c = 6 <= floor(n/5) + 3 = 6
+PASS: n=18: an n-cycle with c = 6 <= floor(n/5) + 3 = 6
+PASS: n=19: an n-cycle with c = 6 <= floor(n/5) + 3 = 6
+PASS: n=20: an n-cycle with c = 7 <= floor(n/5) + 3 = 7
+PASS: n=21: an n-cycle with c = 7 <= floor(n/5) + 3 = 7
+PASS: n=22: an n-cycle with c = 7 <= floor(n/5) + 3 = 7
+PASS: n=23: an n-cycle with c = 7 <= floor(n/5) + 3 = 7
+PASS: n=24: an n-cycle with c = 7 <= floor(n/5) + 3 = 7
+PASS: n=25: an n-cycle with c = 8 <= floor(n/5) + 3 = 8
+PASS: n=26: an n-cycle with c = 8 <= floor(n/5) + 3 = 8
+PASS: n=27: an n-cycle with c = 8 <= floor(n/5) + 3 = 8
+PASS: n=28: an n-cycle with c = 8 <= floor(n/5) + 3 = 8
+PASS: n=29: an n-cycle with c = 8 <= floor(n/5) + 3 = 8
+PASS: n=30: an n-cycle with c = 9 <= floor(n/5) + 3 = 9
+PASS: n=31: an n-cycle with c = 9 <= floor(n/5) + 3 = 9
+PASS: n=32: an n-cycle with c = 9 <= floor(n/5) + 3 = 9
+PASS: n=33: an n-cycle with c = 9 <= floor(n/5) + 3 = 9
+PASS: n=34: an n-cycle with c = 9 <= floor(n/5) + 3 = 9
+PASS: n=35: an n-cycle with c = 10 <= floor(n/5) + 3 = 10
+PASS: n=36: an n-cycle with c = 10 <= floor(n/5) + 3 = 10
+PASS: n=37: an n-cycle with c = 10 <= floor(n/5) + 3 = 10
+PASS: n=38: an n-cycle with c = 10 <= floor(n/5) + 3 = 10
+PASS: n=39: an n-cycle with c = 10 <= floor(n/5) + 3 = 10
+PASS: n=40: an n-cycle with c = 11 <= floor(n/5) + 3 = 11
+PASS: n=41: an n-cycle with c = 11 <= floor(n/5) + 3 = 11
+PASS: n=42: an n-cycle with c = 11 <= floor(n/5) + 3 = 11
+PASS: n=43: an n-cycle with c = 11 <= floor(n/5) + 3 = 11
+PASS: n=44: an n-cycle with c = 11 <= floor(n/5) + 3 = 11
+PASS: n=45: an n-cycle with c = 12 <= floor(n/5) + 3 = 12
+PASS: n=46: an n-cycle with c = 12 <= floor(n/5) + 3 = 12
+PASS: n=47: an n-cycle with c = 12 <= floor(n/5) + 3 = 12
+PASS: n=48: an n-cycle with c = 12 <= floor(n/5) + 3 = 12
+PASS: n=49: an n-cycle with c = 12 <= floor(n/5) + 3 = 12
+PASS: n=50: an n-cycle with c = 13 <= floor(n/5) + 3 = 13
+PASS: n=51: an n-cycle with c = 13 <= floor(n/5) + 3 = 13
+PASS: n=52: an n-cycle with c = 13 <= floor(n/5) + 3 = 13
+PASS: n=53: an n-cycle with c = 13 <= floor(n/5) + 3 = 13
+PASS: n=54: an n-cycle with c = 13 <= floor(n/5) + 3 = 13
+PASS: n=55: an n-cycle with c = 14 <= floor(n/5) + 3 = 14
+PASS: n=56: an n-cycle with c = 14 <= floor(n/5) + 3 = 14
+PASS: n=57: an n-cycle with c = 14 <= floor(n/5) + 3 = 14
+PASS: n=58: an n-cycle with c = 14 <= floor(n/5) + 3 = 14
+PASS: n=59: an n-cycle with c = 14 <= floor(n/5) + 3 = 14
+PASS: n=60: an n-cycle with c = 15 <= floor(n/5) + 3 = 15
+PASS: the 5-cycle 2 3 5 1 4 has c = 3
+PASS: the 6-cycle 2 3 6 5 1 4 has c = 3
+PASS: the 7-cycle 2 5 7 1 6 3 4 has c = 3
+PASS: the 8-cycle 3 6 2 8 1 7 4 5 has c = 3
+PASS: the 10-cycle 2 6 9 10 1 7 8 3 4 5 has c = 4
+PASS: the 11-cycle 3 7 2 10 11 1 8 9 4 5 6 has c = 4
+PASS: the 12-cycle 4 3 8 2 11 12 1 9 10 5 6 7 has c = 4
+PASS: the 13-cycle 5 4 9 3 12 13 6 11 1 2 10 7 8 has c = 4
+PASS: the 15-cycle 4 3 9 2 10 14 15 1 11 13 12 5 6 7 8 has c = 5
+PASS: the 16-cycle 5 4 10 3 2 11 15 16 1 12 14 13 6 7 8 9 has c = 5
+PASS: n=9: the construction gives the 9-cycle 7 6 2 1 4 9 8 3 5 with c = 4
+== extremal permutations for 5 <= n <= 14, by backtracking over positions
+PASS: n=5: no permutation has c < 3
+PASS: n=5: 60 extremal permutations in 11 orbits, 16 of them n-cycles
+PASS: n=6: no permutation has c < 3
+PASS: n=6: 140 extremal permutations in 21 orbits, 30 of them n-cycles
+PASS: n=7: no permutation has c < 3
+PASS: n=7: 230 extremal permutations in 33 orbits, 38 of them n-cycles
+PASS: n=8: no permutation has c < 3
+PASS: n=8: 196 extremal permutations in 28 orbits, 18 of them n-cycles
+PASS: n=9: no permutation has c < 3
+PASS: n=9: 2 extremal permutations in 1 orbits, 0 of them n-cycles
+PASS: n=10: no permutation has c < 4
+PASS: n=10: 42604 extremal permutations in 5433 orbits, 5178 of them n-cycles
+PASS: n=11: no permutation has c < 4
+PASS: n=11: 64890 extremal permutations in 8152 orbits, 6706 of them n-cycles
+PASS: n=12: no permutation has c < 4
+PASS: n=12: 50568 extremal permutations in 6454 orbits, 3856 of them n-cycles
+PASS: n=13: no permutation has c < 4
+PASS: n=13: 788 extremal permutations in 100 orbits, 44 of them n-cycles
+PASS: n=14: no permutation has c < 4
+PASS: n=14: 4 extremal permutations in 1 orbits, 0 of them n-cycles
+SUMMARY: 112 passed, 0 failed
+==============================================================================
+### dumont.jl
+== enumeration against the formula
+PASS: a(1, j), j = 0..1, by enumeration = formula: [1, 1]
+PASS: a(2, j), j = 0..2, by enumeration = formula: [4, 2, 2]
+PASS: a(3, j), j = 0..3, by enumeration = formula: [36, 12, 8, 8]
+PASS: a(4, j), j = 0..4, by enumeration = formula: [576, 144, 72, 56, 56]
+PASS: a(5, j), j = 0..5, by enumeration = formula: [14400, 2880, 1152, 720, 608, 608]
+PASS: a(6, j), j = 0..6, by enumeration = formula: [518400, 86400, 28800, 14976, 10656, 9440, 9440]
+PASS: a(7, j), j = 0..7, by enumeration = formula: [25401600, 3628800, 1036800, 460800, 281088, 217152, 198272, 198272]
+PASS: a(1, j) by filtering all permutations of [1]
+PASS: a(2, j) by filtering all permutations of [3]
+PASS: a(3, j) by filtering all permutations of [5]
+PASS: a(4, j) by filtering all permutations of [7]
+PASS: a(5, j) by filtering all permutations of [9]
+== transfer recursion, table, recurrence
+PASS: transfer recursion = formula, n <= 12
+PASS: the table of a(n, j) for n <= 8
+PASS: a(n+1, j+1) = a(n+1, j) - (n-j)(n-j+1) a(n, j), n <= 11
+PASS: the coefficients u_h are nonnegative, j <= 12
+== explicit polynomials
+PASS: G_2, ..., G_6 at x = 0..12 (more points than the degrees)
+PASS: G_j(0) = a(j, j) = 1, 2, 8, 56, 608, 9440
+PASS: closed forms of a(n, 1), a(n, 2), a(n, 3), a(n, 4), n <= 15
+== first letter
+PASS: number with s(1) = r is ceil(r/2) a(n-1, j) for 1 <= j < n, r <= 2(n-j), n=2
+PASS: number with s(1) = r is ceil(r/2) a(n-1, j) for 1 <= j < n, r <= 2(n-j), n=3
+PASS: number with s(1) = r is ceil(r/2) a(n-1, j) for 1 <= j < n, r <= 2(n-j), n=4
+PASS: number with s(1) = r is ceil(r/2) a(n-1, j) for 1 <= j < n, r <= 2(n-j), n=5
+PASS: number with s(1) = r is ceil(r/2) a(n-1, j) for 1 <= j < n, r <= 2(n-j), n=6
+PASS: j = 0: ceil(r/2) ((n-1)!)^2, n <= 5
+SUMMARY: 25 passed, 0 failed
+==============================================================================
+### hankel.jl
+== Q_k
+PASS: Q_0..Q_5 = 1, 1, 5, 33, 234, 1706 by enumeration of words
+PASS: Q_0..Q_24 by the forward dynamic programme
+PASS: Q_0..Q_24 by the backward dynamic programme
+PASS: Q_0..Q_24 by Shankar's multisum
+== Hankel determinants
+PASS: det (Q_(i+j+1))_{12x12} = -16871599970737005465806167716982557747256 (rational elimination)
+PASS: det (Q_(i+j+1))_{12x12} (fraction-free elimination)
+PASS: det (Q_(i+j))_{13x13} = -169232977731413820207351628133858712800869482 (rational elimination)
+PASS: det (Q_(i+j))_{13x13} (fraction-free elimination)
+PASS: both determinants are negative
+PASS: det (Q_(i+j))_{n x n} > 0 for n <= 12
+PASS: det (Q_(i+j+1))_{n x n} > 0 for n <= 11
+PASS: H v = det(H) e_12 for the integer vector v
+PASS: v^T H v = det(H) det(H_11) < 0
+SUMMARY: 13 passed, 0 failed
+==============================================================================
+### canon.jl
+== descent polynomials of Q_k, k <= 110
+   computed in 417.0 s
+PASS: Q_k(1) agrees with the list of hankel.jl for k <= 24
+PASS: Q_3(x) = 1 + 10x + 16x^2 + 6x^3
+PASS: the coefficients of Q_k(x) are log-concave for every k <= 110
+== nonreal zeros of Q_k(x), k <= 45
+PASS: number of nonreal zeros: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 8, 8, 8, 8, 8, 8]
+== lattice words on four letters
+PASS: three letters, k <= 6: the forbidden sets give exactly the six sequences 0, 1, C_k, B_k, Q_k, |L_3^k|
+PASS: four letters: 1, 14, 54, 92, 92, 92 distinct sets M(w) for k = 1, ..., 6
+PASS: four letters: the family of sets M(w) is the same for k = 4, 5, 6
+PASS: four letters: the families for k <= 3 lie in that family
+PASS: |L_4^k| for k <= 6
+PASS: four letters: 146 classes of forbidden sets carrying 95 sequences
+PASS: the table of single patterns of S_4, k <= 6
+PASS: the nine sequences of Proposition canon-four occur among the 95
+SUMMARY: 12 passed, 0 failed
+==============================================================================
+### steiner.jl
+== characteristic polynomials
+PASS: degree 2n-3 and leading coefficient 1, 3 <= n <= 60
+PASS: Berkowitz = Faddeev-LeVerrier, 3 <= n <= 16
+PASS: a_0 = -(n-1), 3 <= n <= 60
+PASS: det M = n-1 by elimination, 3 <= n <= 30
+PASS: a_(2n-4) = -(3n-5), 3 <= n <= 60
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -7, n=3
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -41, n=4
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -130, n=5
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -310, n=6
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -625, n=7
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -1127, n=8
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -1876, n=9
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -2940, n=10
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -4395, n=11
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -6325, n=12
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -8822, n=13
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -11986, n=14
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -15925, n=15
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -20755, n=16
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -26600, n=17
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -33592, n=18
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -41871, n=19
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -51585, n=20
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -62890, n=21
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -75950, n=22
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -90937, n=23
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -108031, n=24
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -127420, n=25
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -149300, n=26
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -173875, n=27
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -201357, n=28
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -231966, n=29
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -265930, n=30
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -303485, n=31
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -344875, n=32
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -390352, n=33
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -440176, n=34
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -494615, n=35
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -553945, n=36
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -618450, n=37
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -688422, n=38
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -764161, n=39
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -845975, n=40
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -934180, n=41
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -1029100, n=42
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -1131067, n=43
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -1240421, n=44
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -1357510, n=45
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -1482690, n=46
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -1616325, n=47
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -1758787, n=48
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -1910456, n=49
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -2071720, n=50
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -2242975, n=51
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -2424625, n=52
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -2617082, n=53
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -2820766, n=54
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -3036105, n=55
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -3263535, n=56
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -3503500, n=57
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -3756452, n=58
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -4022851, n=59
+PASS: a_(2n-5) = -(n-1)(n-2)(2n^2+6n-15)/6 = -4303165, n=60
+== peak of |a_0|, ..., |a_(2n-4)|
+PASS: peak index is n-1 = 5, n=6
+PASS: peak index is n-1 = 6, n=7
+PASS: peak index is n-1 = 7, n=8
+PASS: peak index is n-1 = 8, n=9
+PASS: peak index is n-1 = 9, n=10
+PASS: peak index is n-1 = 10, n=11
+PASS: peak index is n-1 = 11, n=12
+PASS: peak index is n-1 = 12, n=13
+PASS: peak index is n-1 = 13, n=14
+PASS: peak index is n-1 = 14, n=15
+PASS: peak index is 16, not n-1 = 15, n=16
+PASS: peak index is 17, not n-1 = 16, n=17
+PASS: peak index is 18, not n-1 = 17, n=18
+PASS: peak index is 19, not n-1 = 18, n=19
+PASS: peak index is 20, not n-1 = 19, n=20
+PASS: peak index is 21, not n-1 = 20, n=21
+PASS: peak index is 22, not n-1 = 21, n=22
+PASS: peak index is 23, not n-1 = 22, n=23
+PASS: peak index is 24, not n-1 = 23, n=24
+PASS: peak index is 26, not n-1 = 24, n=25
+PASS: peak index is 27, not n-1 = 25, n=26
+PASS: peak index is 28, not n-1 = 26, n=27
+PASS: peak index is 29, not n-1 = 27, n=28
+PASS: peak index is 30, not n-1 = 28, n=29
+PASS: peak index is 31, not n-1 = 29, n=30
+PASS: peak index is 32, not n-1 = 30, n=31
+PASS: peak index is 33, not n-1 = 31, n=32
+PASS: peak index is 34, not n-1 = 32, n=33
+PASS: peak index is 35, not n-1 = 33, n=34
+PASS: peak index is 37, not n-1 = 34, n=35
+PASS: peak index is 38, not n-1 = 35, n=36
+PASS: peak index is 39, not n-1 = 36, n=37
+PASS: peak index is 40, not n-1 = 37, n=38
+PASS: peak index is 41, not n-1 = 38, n=39
+PASS: peak index is 42, not n-1 = 39, n=40
+PASS: peak index is 43, not n-1 = 40, n=41
+PASS: peak index is 44, not n-1 = 41, n=42
+PASS: peak index is 45, not n-1 = 42, n=43
+PASS: peak index is 47, not n-1 = 43, n=44
+PASS: peak index is 48, not n-1 = 44, n=45
+PASS: peak index is 49, not n-1 = 45, n=46
+PASS: peak index is 50, not n-1 = 46, n=47
+PASS: peak index is 51, not n-1 = 47, n=48
+PASS: peak index is 52, not n-1 = 48, n=49
+PASS: peak index is 53, not n-1 = 49, n=50
+PASS: peak index is 54, not n-1 = 50, n=51
+PASS: peak index is 55, not n-1 = 51, n=52
+PASS: peak index is 57, not n-1 = 52, n=53
+PASS: peak index is 58, not n-1 = 53, n=54
+PASS: peak index is 59, not n-1 = 54, n=55
+PASS: peak index is 60, not n-1 = 55, n=56
+PASS: peak index is 61, not n-1 = 56, n=57
+PASS: peak index is 62, not n-1 = 57, n=58
+PASS: peak index is 63, not n-1 = 58, n=59
+PASS: peak index is 64, not n-1 = 59, n=60
+PASS: peak index is n for 16 <= n <= 24
+PASS: unique peak index l(n) as in Theorem steiner-peak, 6 <= n <= 60
+PASS: n=16: |a_14|, |a_15|, |a_16|, |a_17| = 766504605632, 939602445008, 956326515118, 802497798666
+PASS: |a_0|, ..., |a_(2n-4)| is unimodal, 3 <= n <= 60
+SUMMARY: 122 passed, 0 failed
+==============================================================================
+### searches.jl
+== 1. the table of M(a,b), M*(a,b), floor(beta)
+PASS: (a,b) = (1,1): M, M*, floor(beta) = (2, 1, 2)  [0.4 s]
+PASS: (a,b) = (2,1): M, M*, floor(beta) = (2, 2, 2)  [0.0 s]
+PASS: (a,b) = (2,2): M, M*, floor(beta) = (4, 2, 4)  [0.0 s]
+PASS: (a,b) = (3,1): M, M*, floor(beta) = (2, 2, 3)  [0.0 s]
+PASS: (a,b) = (3,2): M, M*, floor(beta) = (4, 3, 5)  [0.0 s]
+PASS: (a,b) = (3,3): M, M*, floor(beta) = (8, 3, 8)  [0.0 s]
+PASS: (a,b) = (4,1): M, M*, floor(beta) = (2, 3, 3)  [0.0 s]
+PASS: (a,b) = (4,2): M, M*, floor(beta) = (5, 4, 6)  [0.0 s]
+PASS: (a,b) = (4,3): M, M*, floor(beta) = (8, 6, 10)  [0.0 s]
+PASS: (a,b) = (4,4): M, M*, floor(beta) = (16, 6, 16)  [0.0 s]
+PASS: (a,b) = (5,1): M, M*, floor(beta) = (2, 3, 3)  [0.0 s]
+PASS: (a,b) = (5,2): M, M*, floor(beta) = (5, 6, 8)  [0.0 s]
+PASS: (a,b) = (5,3): M, M*, floor(beta) = (10, 7, 14)  [0.0 s]
+PASS: (a,b) = (5,4): M, M*, floor(beta) = (16, 10, 22)  [0.0 s]
+PASS: (a,b) = (5,5): M, M*, floor(beta) = (32, 10, 32)  [0.0 s]
+PASS: (a,b) = (6,1): M, M*, floor(beta) = (2, 4, 4)  [0.0 s]
+PASS: (a,b) = (6,2): M, M*, floor(beta) = (6, 7, 9)  [0.0 s]
+PASS: (a,b) = (6,3): M, M*, floor(beta) = (10, 10, 17)  [0.0 s]
+PASS: (a,b) = (6,4): M, M*, floor(beta) = (21, 11, 28)  [0.0 s]
+PASS: (a,b) = (6,5): M, M*, floor(beta) = (32, 16, 44)  [0.3 s]
+PASS: (a,b) = (6,6): M, M*, floor(beta) = (64, 16, 64)  [16.0 s]
+PASS: (a,b) = (7,1): M, M*, floor(beta) = (2, 4, 4)  [0.0 s]
+PASS: (a,b) = (7,2): M, M*, floor(beta) = (6, 8, 10)  [0.0 s]
+PASS: (a,b) = (7,3): M, M*, floor(beta) = (12, 11, 21)  [0.0 s]
+PASS: (a,b) = (7,4): M, M*, floor(beta) = (21, 15, 36)  [0.0 s]
+PASS: (a,b) = (7,5): M, M*, floor(beta) = (42, 18, 58)  [4.9 s]
+== 2. two rows of cells, 2 <= a <= 22
+PASS: M(a,2), M*(a,2) = (4, 2), a = 2
+PASS: M(a,2), M*(a,2) = (4, 3), a = 3
+PASS: M(a,2), M*(a,2) = (5, 4), a = 4
+PASS: M(a,2), M*(a,2) = (5, 6), a = 5
+PASS: M(a,2), M*(a,2) = (6, 7), a = 6
+PASS: M(a,2), M*(a,2) = (6, 8), a = 7
+PASS: M(a,2), M*(a,2) = (7, 9), a = 8
+PASS: M(a,2), M*(a,2) = (7, 11), a = 9
+PASS: M(a,2), M*(a,2) = (8, 12), a = 10
+PASS: M(a,2), M*(a,2) = (8, 13), a = 11
+PASS: M(a,2), M*(a,2) = (9, 14), a = 12
+PASS: M(a,2), M*(a,2) = (9, 16), a = 13
+PASS: M(a,2), M*(a,2) = (10, 17), a = 14
+PASS: M(a,2), M*(a,2) = (10, 18), a = 15
+PASS: M(a,2), M*(a,2) = (11, 19), a = 16
+PASS: M(a,2), M*(a,2) = (11, 21), a = 17
+PASS: M(a,2), M*(a,2) = (12, 22), a = 18
+PASS: M(a,2), M*(a,2) = (12, 23), a = 19
+PASS: M(a,2), M*(a,2) = (13, 24), a = 20
+PASS: M(a,2), M*(a,2) = (13, 26), a = 21
+PASS: M(a,2), M*(a,2) = (14, 27), a = 22
+== 3. three rows, and the table of M*(a,b) for b <= 4
+PASS: Meven(a,3) = 6, 10, 14, 18, 22 for a = 4, 6, 8, 10, 12
+PASS: M*(a,1) for a in 1:10: [1, 2, 2, 3, 3, 4, 4, 5, 5, 6]  [0.0 s]
+PASS: M*(a,2) for a in 2:16: [2, 3, 4, 6, 7, 8, 9, 11, 12, 13, 14, 16, 17, 18, 19]  [0.0 s]
+PASS: M*(a,3) for a in 3:13: [3, 6, 7, 10, 11, 14, 15, 18, 18, 22, 23]  [6.7 s]
+PASS: M*(a,4) for a in 5:10: [10, 11, 15, 17, 20, 22]  [170.8 s]
+== 4. odd families in the square
+PASS: Modd(n,n) = 1, 2, 3, 6, 10, 16 for n <= 6
+== 5. odd families from (0,0) to (n+1,n)
+PASS: Modd(n+1,n) = 2^n for n <= 5
+PASS: n = 1: the odd families of 2 paths to (2,1) are the 2 families R_M
+PASS: n = 2: the odd families of 4 paths to (3,2) are the 5 families R_M
+PASS: n = 3: the odd families of 8 paths to (4,3) are the 14 families R_M
+PASS: n = 4: the odd families of 16 paths to (5,4) are the 42 families R_M
+== 6. free endpoints, odd length
+PASS: length 1, pairwise odd, endpoints free: largest set has 1 = 2^0 words
+PASS: length 3, pairwise odd, endpoints free: largest set has 2 = 2^1 words
+PASS: length 5, pairwise odd, endpoints free: largest set has 4 = 2^2 words
+PASS: length 7, pairwise odd, endpoints free: largest set has 8 = 2^3 words
+PASS: length 9, pairwise odd, endpoints free: largest set has 16 = 2^4 words
+== 7. tau in the column space of A_(a,b)
+PASS: a, b <= 10, a + b even: tau in the column space iff a, b even, or a = b, or a = b = 1 (mod 4)
+PASS: rank A_(a,b) = ab - gcd(a+1,b+1) + 1 for a + b even, a, b <= 10 (Gaussian elimination)
+== 8. pairs of matchings by the number of loops
+PASS: n = 1: ordered pairs by the number of loops [1]
+PASS: n = 2: ordered pairs by the number of loops [2, 2]
+PASS: n = 3: ordered pairs by the number of loops [8, 12, 5]
+PASS: n = 4: ordered pairs by the number of loops [42, 84, 56, 14]
+PASS: n = 5: ordered pairs by the number of loops [262, 640, 580, 240, 42]
+PASS: n = 6: ordered pairs by the number of loops [1828, 5236, 5894, 3344, 990, 132]
+PASS: |F_M cap F_M'| = 2^(number of loops) for n <= 4, by listing the families
+== 9. sigma(M)
+PASS: max sigma(M) = 0, 1, 2, 2, 3, 3 for n = 1, ..., 6 (one family at n = 1)
+PASS: n = 6: sigma = 1, 2, 3 for 6, 112, 14 matchings
+== 10. even families through (i, i+1)
+PASS: for n <= 5 and 0 <= i <= n-1 the largest even family through (i, i+1) has 2^(n-1) paths
+== 11. the table of boxes
+PASS: box [1, 1]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (2, 2, 2, 1, 0, 2)  [0.2 s]
+PASS: box [2, 2]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (6, 4, 4, 2, 2, 5)  [0.0 s]
+PASS: box [3, 3]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (20, 8, 8, 3, 6, 10)  [0.0 s]
+PASS: box [4, 2]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (15, 5, 6, 4, 8, 9)  [0.0 s]
+PASS: box [5, 1]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (6, 2, 3, 3, 4, 6)  [0.0 s]
+PASS: box [6, 2]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (28, 6, 9, 7, 12, 13)  [0.0 s]
+PASS: box [1, 1, 1]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (6, 2, 5, 3, 4, 6)  [0.0 s]
+PASS: box [2, 1, 1]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (12, 5, 8, 3, 8, 10)  [0.0 s]
+PASS: box [2, 2, 1]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (30, 5, 13, 7, 14, 17)  [0.0 s]
+PASS: box [3, 1, 1]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (20, 5, 10, 6, 12, 14)  [0.0 s]
+PASS: box [2, 2, 2]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (90, 15, 27, 7, 22, 29)  [0.0 s]
+PASS: box [3, 2, 1]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (60, 12, 20, 7, 24, 24)  [0.0 s]
+PASS: box [4, 1, 1]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (30, 7, 13, 6, 16, 18)  [0.0 s]
+PASS: box [3, 3, 1]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (140, 12, 33, 13, 28, 34)  [0.0 s]
+PASS: box [3, 2, 2]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (210, 15, 43, 16, 38, 41)  [0.1 s]
+PASS: box [4, 2, 1]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (105, 12, 28, 11, 31, 31)  [0.0 s]
+PASS: box [5, 1, 1]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (42, 7, 16, 9, 20, 22)  [0.0 s]
+PASS: box [4, 2, 2]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (420, 30, 64, 16, 50, 53)  [0.4 s]
+PASS: box [3, 3, 2]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (560, 37, 75, 16, 54, 58)  [1.8 s]
+PASS: box [4, 3, 1]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (280, 26, 49, 13, 44, 44)  [0.2 s]
+PASS: box [1, 1, 1, 1]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (24, 8, 16, 3, 12, 18)  [0.0 s]
+PASS: box [2, 1, 1, 1]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (60, 8, 27, 10, 28, 30)  [0.0 s]
+PASS: box [2, 2, 1, 1]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (180, 24, 54, 10, 42, 50)  [0.1 s]
+PASS: box [3, 1, 1, 1]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (120, 14, 41, 10, 36, 42)  [0.0 s]
+PASS: box [1, 1, 1, 1, 1]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (120, 8, 55, 15, 36, 50)  [0.0 s]
+PASS: box [2, 1, 1, 1, 1]: paths, Madm, bound, Moth, R(p), |E|-|V|+2 = (360, 31, 108, 15, 76, 82)  [28.3 s]
+== 12. words over d letters with free endpoints
+PASS: d = 2, m = 1: largest set with pairwise common edges = m (mod 2) has 1 = 2^0 words
+PASS: d = 2, m = 2: largest set with pairwise common edges = m (mod 2) has 2 = 2^1 words
+PASS: d = 2, m = 3: largest set with pairwise common edges = m (mod 2) has 2 = 2^1 words
+PASS: d = 2, m = 4: largest set with pairwise common edges = m (mod 2) has 4 = 2^2 words
+PASS: d = 2, m = 5: largest set with pairwise common edges = m (mod 2) has 4 = 2^2 words
+PASS: d = 2, m = 6: largest set with pairwise common edges = m (mod 2) has 8 = 2^3 words
+PASS: d = 2, m = 7: largest set with pairwise common edges = m (mod 2) has 8 = 2^3 words
+PASS: d = 2, m = 8: largest set with pairwise common edges = m (mod 2) has 16 = 2^4 words
+PASS: d = 3, m = 1: largest set with pairwise common edges = m (mod 2) has 1 = 3^0 words
+PASS: d = 3, m = 2: largest set with pairwise common edges = m (mod 2) has 3 = 3^1 words
+PASS: d = 3, m = 3: largest set with pairwise common edges = m (mod 2) has 3 = 3^1 words
+PASS: d = 3, m = 4: largest set with pairwise common edges = m (mod 2) has 9 = 3^2 words
+PASS: d = 3, m = 5: largest set with pairwise common edges = m (mod 2) has 9 = 3^2 words
+PASS: d = 4, m = 1: largest set with pairwise common edges = m (mod 2) has 1 = 4^0 words
+PASS: d = 4, m = 2: largest set with pairwise common edges = m (mod 2) has 4 = 4^1 words
+PASS: d = 4, m = 3: largest set with pairwise common edges = m (mod 2) has 4 = 4^1 words
+PASS: d = 4, m = 4: largest set with pairwise common edges = m (mod 2) has 16 = 4^2 words
+PASS: d = 5, m = 1: largest set with pairwise common edges = m (mod 2) has 1 = 5^0 words
+PASS: d = 5, m = 2: largest set with pairwise common edges = m (mod 2) has 5 = 5^1 words
+PASS: d = 5, m = 3: largest set with pairwise common edges = m (mod 2) has 5 = 5^1 words
+SUMMARY: 121 passed, 0 failed
+==============================================================================
+verify_systems.jl         4 passed   0 failed     9.9 s
+odd_families.jl          97 passed   0 failed     2.2 s
+blocks.jl                28 passed   0 failed     2.7 s
+regions.jl               73 passed   0 failed     4.9 s
+eulerian.jl              46 passed   0 failed     8.5 s
+caged.jl                112 passed   0 failed    39.4 s
+dumont.jl                25 passed   0 failed    11.4 s
+hankel.jl                13 passed   0 failed     2.6 s
+canon.jl                 12 passed   0 failed   429.3 s
+steiner.jl              122 passed   0 failed   220.4 s
+searches.jl             121 passed   0 failed   256.0 s
+TOTAL: 653 passed, 0 failed  (987.4 s)

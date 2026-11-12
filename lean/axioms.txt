@@ -1,0 +1,34 @@
+Output of #print axioms (Lean 4.24.0, core library only).
+
+LatticePaths.lean
+'star_lemma' does not depend on any axioms
+'canonical_pairs' does not depend on any axioms
+'skeleton_identity' does not depend on any axioms
+'skeleton_count' does not depend on any axioms
+'shankar_n1' does not depend on any axioms
+'shankar_n2' does not depend on any axioms
+'shankar_n3' does not depend on any axioms
+'three_rows_even' does not depend on any axioms
+'square_odd' does not depend on any axioms
+'odd_family_7' does not depend on any axioms
+'odd_family_8' does not depend on any axioms
+'block_families_dim3' does not depend on any axioms
+'block_families_dim4' does not depend on any axioms
+'block_families_dim5' does not depend on any axioms
+
+Enumerative.lean
+'eulerian_des' does not depend on any axioms
+'eulerian_exc' does not depend on any axioms
+'mantaci' does not depend on any axioms
+'desarmenien_foata' does not depend on any axioms
+'small_even_odd' does not depend on any axioms
+'p5_identity' does not depend on any axioms
+'caged_example' does not depend on any axioms
+'dumont_small' does not depend on any axioms
+'dumont_table' does not depend on any axioms
+'q_values' does not depend on any axioms
+'hankel_shifted' does not depend on any axioms
+'hankel_unshifted' does not depend on any axioms
+'hankel_minors_positive' does not depend on any axioms
+'steiner_path' does not depend on any axioms
+'steiner_peak' does not depend on any axioms

@@ -10,73 +10,42 @@ permissions:
   contents: read
 
 jobs:
-  checks:
-    name: C, C++, Bash, Python, Julia and Lean checks
+  lean:
+    name: Lean certificate
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Install python-sat
-        run: python -m pip install python-sat
-      - uses: julia-actions/setup-julia@v2
-        with:
-          version: "1.10"
-      - name: Install Lean 4.34.1
+      - name: Install Lean 4.24.0
         run: |
           curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
-            | sh -s -- -y --default-toolchain leanprover/lean4:v4.34.1
+            | sh -s -- -y --default-toolchain leanprover/lean4:v4.24.0
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-      - run: scripts/run_all.sh
-      - name: Keep the logs
-        if: always()
-        uses: actions/upload-artifact@v4
+      - name: Check both files and their axioms
+        run: |
+          cd lean
+          for f in LatticePaths.lean Enumerative.lean; do
+            lean "$f" | tee -a out.txt
+          done
+          test "$(grep -c 'does not depend on any axioms' out.txt)" = 29
+          ! grep -q "sorry\|error" out.txt
+
+  julia:
+    name: Julia checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: julia-actions/setup-julia@v2
         with:
-          name: logs
-          path: build/*.txt
-
-  catalan-rigidity:
-    name: Searches and two-row families
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@v4
-      - name: Run the checks
+          version: "1.11"
+      - name: Run every script
         run: |
-          cd verification/catalan-rigidity
-          gcc -O2 -o maxclique maxclique.c
-          python3 two_rows_constructions.py | tee out.txt
-          grep -qx ok out.txt
-          python3 two_rows_exact.py 12
-          test "$(python3 largest_family.py 5 5 1 | head -1)" = 10
-          test "$(python3 free_end_families.py 9 | head -1)" = 16
-          test "$(python3 free_end_families.py 9 1 | head -1)" = 16
-
-  paper:
-    name: Build the paper
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install TeX Live
-        run: |
-          sudo apt-get -o Acquire::Retries=3 update
-          sudo apt-get -o Acquire::Retries=3 install -y --no-install-recommends \
-            texlive-latex-recommended texlive-latex-extra texlive-pictures \
-            texlive-fonts-recommended lmodern poppler-utils zip
-      - run: scripts/build_paper.sh
-      - name: Build Catalan Rigidity of Even Lattice Paths
-        run: |
-          cd preprintCatalanRigidity
-          pdflatex -interaction=nonstopmode -halt-on-error main.tex > /dev/null
-          pdflatex -interaction=nonstopmode -halt-on-error main.tex > /dev/null
-          pdflatex -interaction=nonstopmode -halt-on-error main.tex > /dev/null
-          if grep -q "Overfull\|Underfull\|undefined" main.log; then
-            grep "Overfull\|Underfull\|undefined" main.log; exit 1
-          fi
+          cd julia
+          julia run_all.jl | tee out.txt
+          grep -q ", 0 failed" out.txt
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: paper
-          path: dist/
+          name: julia-log
+          path: julia/out.txt
